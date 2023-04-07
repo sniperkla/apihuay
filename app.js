@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static("public"));
+
 app.get("/huay", async (req, res) => {
   const password = req.body;
 
@@ -1219,6 +1221,4 @@ app.get("/huay", async (req, res) => {
   res.status(200).send(alldata);
 });
 
-app.listen(4000, () => {
-  console.log("Server listening on port 4000");
-});
+app.listen(process.env.PORT || 3000);
