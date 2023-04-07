@@ -330,7 +330,19 @@ app.get("/huay", async (req, res) => {
     "div#foreignStock-section div:nth-child(15) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // Launch a new headless browser instance
-  const browser = await puppeteer.launch();
+
+  const PCR = require("puppeteer-chromium-resolver");
+  const options = {};
+  const stats = await PCR(options);
+  const browser = await stats.puppeteer
+    .launch({
+      headless: false,
+      args: ["--no-sandbox"],
+      executablePath: stats.executablePath,
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
   // Open a new page in the browser
   const page = await browser.newPage();
