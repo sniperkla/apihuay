@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.get("/huay", async (req, res) => {
+app.get("/", async (req, res) => {
   const password = req.body;
 
   //หวยรัฐบาล
@@ -1219,6 +1219,6 @@ app.get("/huay", async (req, res) => {
   res.status(200).send(alldata);
 });
 
-app.listen(3000, () => {
-  console.log("Server listening on port 3000");
+app.listen(4000, () => {
+  console.log("Server listening on port 4000");
 });
