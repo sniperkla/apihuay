@@ -10,321 +10,321 @@ app.get("/", async (req, res) => {
   const password = req.body;
 
   //หวยรัฐบาล
-  const thวันที่ =
+  const thdatess =
     "#government-section > div.row.px-0.m-0 > div:nth-child(1) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-th.ml-2 > span.huay-card-period";
-  const thรางวัลที่1 =
+  const thnum1 =
     "#government-section > div.row.px-0.m-0 > div:nth-child(1) > div > div.p-0.huay-card-body > div:nth-child(1) > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const th2ตัวล่าง =
+  const th2under =
     "#government-section > div.row.px-0.m-0 > div:nth-child(1) > div > div.p-0.huay-card-body > div:nth-child(1) > div:nth-child(2) > div.p-0.text-award-choke";
-  const th3ตัวหน้า =
+  const th3front =
     "#government-section > div.row.px-0.m-0 > div:nth-child(1) > div > div.p-0.huay-card-body > div.d-flex.flex-row.huay-card-border-separate > div.text-center.w-50.huay-card-border-right.mt-1 > div.p-0.text-award-choke";
-  const th4ตัวล่าง =
+  const th4under =
     "#government-section > div.row.px-0.m-0 > div:nth-child(1) > div > div.p-0.huay-card-body > div.d-flex.flex-row.huay-card-border-separate > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยมาเลย์
-  const myวันที่ =
+  const mydatess =
     "#foreign-section > div.pc-view > div > div:nth-child(9) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-my.ml-2 > span.huay-card-period";
-  const my3ตัวบน =
+  const my3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(9) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const my2ตัวล่าง =
+  const my2under =
     "#foreign-section > div.pc-view > div > div:nth-child(9) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาว3วัน
-  const laoวันที่ =
+  const laodatess =
     "#foreign-section > div.pc-view > div > div:nth-child(1) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-la.ml-2 > span.huay-card-period";
-  const lao3ตัวบน =
+  const lao3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(1) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const lao2ตัวล่าง =
+  const lao2under =
     "#foreign-section > div.pc-view > div > div:nth-child(1) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวเช้า
-  const laomorningวันที่ =
+  const laomorningdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(7) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-lam.ml-2 > span.huay-card-period";
-  const laomorning3ตัวบน =
+  const laomorning3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(7) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laomorning2ตัวล่าง =
+  const laomorning2under =
     "#foreign-section > div.pc-view > div > div:nth-child(7) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวเที่ยง
-  const laomiddayวันที่ =
+  const laomiddaydatess =
     "#foreign-section > div.pc-view > div > div:nth-child(8) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-lamid.ml-2 > span.huay-card-period";
-  const laomidday3ตัวบน =
+  const laomidday3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(8) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laomidday2ตัวล่าง =
+  const laomidday2under =
     "#foreign-section > div.pc-view > div > div:nth-child(8) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวร่วมใจ
-  const laotogetherวันที่ =
+  const laotogetherdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(12) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-larj.ml-2 > span.huay-card-period";
-  const laotogether3ตัวบน =
+  const laotogether3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(12) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laotogether2ตัวล่าง =
+  const laotogether2under =
     "#foreign-section > div.pc-view > div > div:nth-child(12) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาววิลล่า
-  const laovillaวันที่ =
+  const laovilladatess =
     "#foreign-section > div.pc-view > div > div:nth-child(13) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-lavl.ml-2 > span.huay-card-period";
-  const laovilla3ตัวบน =
+  const laovilla3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(13) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laovilla2ตัวล่าง =
+  const laovilla2under =
     "#foreign-section > div.pc-view > div > div:nth-child(13) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวนคร
-  const laocityวันที่ =
+  const laocitydatess =
     "#foreign-section > div.pc-view > div > div:nth-child(14) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-lank.ml-2 > span.huay-card-period";
-  const laocity3ตัวบน =
+  const laocity3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(14) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laocity2ตัวล่าง =
+  const laocity2under =
     "#foreign-section > div.pc-view > div > div:nth-child(14) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวทูไนท์
-  const laotonightวันที่ =
+  const laotonightdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(15) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-latn.ml-2 > span.huay-card-period";
-  const laotonight3ตัวบน =
+  const laotonight3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(15) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laotonight2ตัวล่าง =
+  const laotonight2under =
     "#foreign-section > div.pc-view > div > div:nth-child(15) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวเศรษฐกิจ
-  const laoeconomicวันที่ =
+  const laoeconomicdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(16) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-laeco.ml-2 > span.huay-card-period";
-  const laoeconomic3ตัวบน =
+  const laoeconomic3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(16) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laoeconomic2ตัวล่าง =
+  const laoeconomic2under =
     "#foreign-section > div.pc-view > div > div:nth-child(16) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวดีเดย์
-  const laoddayวันที่ =
+  const laoddaydatess =
     "#foreign-section > div.pc-view > div > div:nth-child(17) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-ladd.ml-2 > span.huay-card-period";
-  const laodday3ตัวบน =
+  const laodday3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(17) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laodday2ตัวล่าง =
+  const laodday2under =
     "#foreign-section > div.pc-view > div > div:nth-child(17) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวรุ่งเรือง
-  const laogrowวันที่ =
+  const laogrowdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(20) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-larr.ml-2 > span.huay-card-period";
-  const laogrow3ตัวบน =
+  const laogrow3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(20) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laogrow2ตัวล่าง =
+  const laogrow2under =
     "#foreign-section > div.pc-view > div > div:nth-child(20) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยลาวพลัส
-  const laoplusวันที่ =
+  const laoplusdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(21) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-lapls.ml-2 > span.huay-card-period";
-  const laoplus3ตัวบน =
+  const laoplus3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(21) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const laoplus2ตัวล่าง =
+  const laoplus2under =
     "#foreign-section > div.pc-view > div > div:nth-child(21) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอย
-  const hanoiวันที่ =
+  const hanoidatess =
     "#foreign-section > div.pc-view > div > div:nth-child(2) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-vn.ml-2 > span.huay-card-period";
-  const hanoi3ตัวบน =
+  const hanoi3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(2) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoi2ตัวล่าง =
+  const hanoi2under =
     "#foreign-section > div.pc-view > div > div:nth-child(2) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยvip
-  const hanoivipวันที่ =
+  const hanoivipdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(3) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-hc2.ml-2 > span.huay-card-period";
-  const hanoivip3ตัวบน =
+  const hanoivip3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(3) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoivip2ตัวล่าง =
+  const hanoivip2under =
     "#foreign-section > div.pc-view > div > div:nth-child(3) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยพิเศษ
-  const hanoispวันที่ =
+  const hanoispdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(4) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-hc.ml-2 > span.huay-card-period";
-  const hanoisp3ตัวบน =
+  const hanoisp3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(4) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoisp2ตัวล่าง =
+  const hanoisp2under =
     "#foreign-section > div.pc-view > div > div:nth-child(4) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยรอบดึก
-  const hanoimidnightวันที่ =
+  const hanoimidnightdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(5) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-n22.ml-2 > span.huay-card-period";
-  const hanoimidnight3ตัวบน =
+  const hanoimidnight3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(5) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoimidnight2ตัวล่าง =
+  const hanoimidnight2under =
     "#foreign-section > div.pc-view > div > div:nth-child(5) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยเช้า
-  const hanoimorningวันที่ =
+  const hanoimorningdatess =
     "#foreign-section > div.pc-view > div > div:nth-child(6) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-hnm.ml-2 > span.huay-card-period";
-  const hanoimorning3ตัวบน =
+  const hanoimorning3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(6) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoimorning2ตัวล่าง =
+  const hanoimorning2under =
     "#foreign-section > div.pc-view > div > div:nth-child(6) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยเดย์
-  const hanoidayวันที่ =
+  const hanoidaydatess =
     "#foreign-section > div.pc-view > div > div:nth-child(10) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-hcd.ml-2 > span.huay-card-period";
-  const hanoiday3ตัวบน =
+  const hanoiday3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(10) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoiday2ตัวล่าง =
+  const hanoiday2under =
     "#foreign-section > div.pc-view > div > div:nth-child(10) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยไชโย
-  const hanoichaiyoวันที่ =
+  const hanoichaiyodatess =
     "#foreign-section > div.pc-view > div > div:nth-child(18) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-hncy.ml-2 > span.huay-card-period";
-  const hanoichaiyo3ตัวบน =
+  const hanoichaiyo3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(18) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoichaiyo2ตัวล่าง =
+  const hanoichaiyo2under =
     "#foreign-section > div.pc-view > div > div:nth-child(18) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยฮานอยท้องถิ่น
-  const hanoilocalวันที่ =
+  const hanoilocaldatess =
     "#foreign-section > div.pc-view > div > div:nth-child(19) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-hnlocal.ml-2 > span.huay-card-period";
-  const hanoilocal3ตัวบน =
+  const hanoilocal3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(19) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hanoilocal2ตัวล่าง =
+  const hanoilocal2under =
     "#foreign-section > div.pc-view > div > div:nth-child(19) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยออมสิน
-  const aomsinวันที่ =
+  const aomsindatess =
     "#government-section > div.row.px-0.m-0 > div:nth-child(2) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-aom.ml-2 > span.huay-card-period";
-  const aomsin3ตัวบน =
+  const aomsin3upper =
     "#government-section > div.row.px-0.m-0 > div:nth-child(2) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const aomsin2ตัวล่าง =
+  const aomsin2under =
     "#government-section > div.row.px-0.m-0 > div:nth-child(2) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยธกส
-  const baacวันที่ =
+  const baacdatess =
     "#government-section > div.row.px-0.m-0 > div:nth-child(3) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-baac.ml-2 > span.huay-card-period";
-  const baac3ตัวบน =
+  const baac3upper =
     "#government-section > div.row.px-0.m-0 > div:nth-child(3) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const baac2ตัวล่าง =
+  const baac2under =
     "#government-section > div.row.px-0.m-0 > div:nth-child(3) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   //หวยแคนาดา
-  const canadaวันที่ =
+  const canadadatess =
     "#foreign-section > div.pc-view > div > div:nth-child(11) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-ca.ml-2 > span.huay-card-period";
-  const canada3ตัวบน =
+  const canada3upper =
     "#foreign-section > div.pc-view > div > div:nth-child(11) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const canada2ตัวล่าง =
+  const canada2under =
     "#foreign-section > div.pc-view > div > div:nth-child(11) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   /////////////////////// หวยหุ้น /////////////////////
 
   // หุ้นเกาหลี
-  const koreastockวันที่ =
+  const koreastockdatess =
     "#foreignStock-section > div.pc-view > div > div:nth-child(1) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const koreastock3ตัวบน =
+  const koreastock3upper =
     "#foreignStock-section > div.pc-view > div > div:nth-child(1) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const koreastock2ตัวล่าง =
+  const koreastock2under =
     "#foreignStock-section > div.pc-view > div > div:nth-child(1) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นนิเคอิเช้า
-  const nikeimorningวันที่ =
+  const nikeimorningdatess =
     "#foreignStock-section div:nth-child(2) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const nikeimorning3ตัวบน =
+  const nikeimorning3upper =
     "#foreignStock-section > div.pc-view > div > div:nth-child(2) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const nikeimorning2ตัวล่าง =
+  const nikeimorning2under =
     "div#foreignStock-section div:nth-child(2) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นนิเคอิบ่าย
-  const nikeimiddayวันที่ =
+  const nikeimiddaydatess =
     "div#foreignStock-section div:nth-child(3) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const nikeimidday3ตัวบน =
+  const nikeimidday3upper =
     "div#foreignStock-section div:nth-child(3) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const nikeimidday2ตัวล่าง =
+  const nikeimidday2under =
     "div#foreignStock-section div:nth-child(3) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นฮั่งเส็งเช้า
-  const hungsengmorningวันที่ =
+  const hungsengmorningdatess =
     "div#foreignStock-section div:nth-child(4) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const hungsengmorning3ตัวบน =
+  const hungsengmorning3upper =
     "div#foreignStock-section div:nth-child(4) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hungsengmorning2ตัวล่าง =
+  const hungsengmorning2under =
     "div#foreignStock-section div:nth-child(4) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นฮั่งเส็งบ่าย
-  const hungsengmiddayวันที่ =
+  const hungsengmiddaydatess =
     "div#foreignStock-section div:nth-child(5) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const hungsengmidday3ตัวบน =
+  const hungsengmidday3upper =
     "div#foreignStock-section div:nth-child(5) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const hungsengmidday2ตัวล่าง =
+  const hungsengmidday2under =
     "div#foreignStock-section div:nth-child(5) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นจีนเช้า
-  const chinamorningวันที่ =
+  const chinamorningdatess =
     "div#foreignStock-section div:nth-child(6) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const chinamorning3ตัวบน =
+  const chinamorning3upper =
     "div#foreignStock-section div:nth-child(6) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const chinamorning2ตัวล่าง =
+  const chinamorning2under =
     "div#foreignStock-section div:nth-child(6) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นจีนบ่าย
-  const chinamiddayวันที่ =
+  const chinamiddaydatess =
     "div#foreignStock-section div:nth-child(7) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const chinamidday3ตัวบน =
+  const chinamidday3upper =
     "div#foreignStock-section div:nth-child(7) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const chinamidday2ตัวล่าง =
+  const chinamidday2under =
     "div#foreignStock-section div:nth-child(7) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นไต้หวัน
-  const taiwanstockวันที่ =
+  const taiwanstockdatess =
     "div#foreignStock-section div:nth-child(8) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const taiwanstock3ตัวบน =
+  const taiwanstock3upper =
     "div#foreignStock-section div:nth-child(8) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const taiwanstock2ตัวล่าง =
+  const taiwanstock2under =
     "div#foreignStock-section div:nth-child(8) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นสิงคโปร์
-  const singaporestockวันที่ =
+  const singaporestockdatess =
     "div#foreignStock-section div:nth-child(9) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const singaporestock3ตัวบน =
+  const singaporestock3upper =
     "div#foreignStock-section div:nth-child(9) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const singaporestock2ตัวล่าง =
+  const singaporestock2under =
     "div#foreignStock-section div:nth-child(9) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นไต้อินเดีย
-  const indiastockวันที่ =
+  const indiastockdatess =
     "div#foreignStock-section div:nth-child(10) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const indiastock3ตัวบน =
+  const indiastock3upper =
     "div#foreignStock-section div:nth-child(10) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const indiastock2ตัวล่าง =
+  const indiastock2under =
     "div#foreignStock-section div:nth-child(10) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นรัสเซีย
-  const russiastockวันที่ =
+  const russiastockdatess =
     "div#foreignStock-section div:nth-child(11) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const russiastock3ตัวบน =
+  const russiastock3upper =
     "div#foreignStock-section div:nth-child(11) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const russiastock2ตัวล่าง =
+  const russiastock2under =
     "div#foreignStock-section div:nth-child(11) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นอียิปต์
-  const egyptstockวันที่ =
+  const egyptstockdatess =
     "div#foreignStock-section div:nth-child(12) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const egyptstock3ตัวบน =
+  const egyptstock3upper =
     "div#foreignStock-section div:nth-child(12) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const egyptstock2ตัวล่าง =
+  const egyptstock2under =
     "div#foreignStock-section div:nth-child(12) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นเยอรมัน
-  const germanstockวันที่ =
+  const germanstockdatess =
     "div#foreignStock-section div:nth-child(13) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const germanstock3ตัวบน =
+  const germanstock3upper =
     "div#foreignStock-section div:nth-child(13) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const germanstock2ตัวล่าง =
+  const germanstock2under =
     "div#foreignStock-section div:nth-child(13) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นอังกฤษ
-  const englandstockวันที่ =
+  const englandstockdatess =
     "div#foreignStock-section div:nth-child(14) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const englandstock3ตัวบน =
+  const englandstock3upper =
     "div#foreignStock-section div:nth-child(14) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const englandstock2ตัวล่าง =
+  const englandstock2under =
     "div#foreignStock-section div:nth-child(14) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // หุ้นดาวน์โจนส์
-  const dowjonestockวันที่ =
+  const dowjonestockdatess =
     "div#foreignStock-section div:nth-child(15) > div > div.p-1.mb-1.huay-card-header > span.huay-card-product.huay-card-product-stock.ml-2 > span.huay-card-period";
-  const dowjonestock3ตัวบน =
+  const dowjonestock3upper =
     "div#foreignStock-section div:nth-child(15) > div > div.p-0.huay-card-body > div > div.text-center.w-50.huay-card-border-right.m-0 > div.p-0.text-award-choke";
-  const dowjonestock2ตัวล่าง =
+  const dowjonestock2under =
     "div#foreignStock-section div:nth-child(15) > div > div.p-0.huay-card-body > div > div:nth-child(2) > div.p-0.text-award-choke";
 
   // Launch a new headless browser instance
@@ -337,202 +337,202 @@ app.get("/", async (req, res) => {
   await page.goto("https://www.mhandee.com/");
 
   // หวยไทย
-  const thdate = await page.$(thวันที่);
-  const th1 = await page.$(thรางวัลที่1);
-  const th2 = await page.$(th2ตัวล่าง);
-  const th3 = await page.$(th3ตัวหน้า);
-  const th4 = await page.$(th4ตัวล่าง);
+  const thdate = await page.$(thdatess);
+  const th1 = await page.$(thnum1);
+  const th2 = await page.$(th2under);
+  const th3 = await page.$(th3front);
+  const th4 = await page.$(th4under);
 
   // หวยมาเลย์
-  const mydate = await page.$(myวันที่);
-  const my1 = await page.$(my3ตัวบน);
-  const my2 = await page.$(my2ตัวล่าง);
+  const mydate = await page.$(mydatess);
+  const my1 = await page.$(my3upper);
+  const my2 = await page.$(my2under);
 
   //หวยลาว จันทร์ พุธ ศุกร์
-  const laodate = await page.$(laoวันที่);
-  const lao1 = await page.$(lao3ตัวบน);
-  const lao2 = await page.$(lao2ตัวล่าง);
+  const laodate = await page.$(laodatess);
+  const lao1 = await page.$(lao3upper);
+  const lao2 = await page.$(lao2under);
 
   //หวยลาวเช้า
-  const laomorningdate = await page.$(laomorningวันที่);
-  const laomorning1 = await page.$(laomorning3ตัวบน);
-  const laomorning2 = await page.$(laomorning2ตัวล่าง);
+  const laomorningdate = await page.$(laomorningdatess);
+  const laomorning1 = await page.$(laomorning3upper);
+  const laomorning2 = await page.$(laomorning2under);
 
   //หวยลาวเที่ยง
-  const laomiddaydate = await page.$(laomiddayวันที่);
-  const laomidday1 = await page.$(laomidday3ตัวบน);
-  const laomidday2 = await page.$(laomidday2ตัวล่าง);
+  const laomiddaydate = await page.$(laomiddaydatess);
+  const laomidday1 = await page.$(laomidday3upper);
+  const laomidday2 = await page.$(laomidday2under);
 
   //หวยลาวร่วมใจ
-  const laotogetherdate = await page.$(laotogetherวันที่);
-  const laotogether1 = await page.$(laotogether3ตัวบน);
-  const laotogether2 = await page.$(laotogether2ตัวล่าง);
+  const laotogetherdate = await page.$(laotogetherdatess);
+  const laotogether1 = await page.$(laotogether3upper);
+  const laotogether2 = await page.$(laotogether2under);
 
   //หวยลาววิลล่า
-  const laovilladate = await page.$(laovillaวันที่);
-  const laovilla1 = await page.$(laovilla3ตัวบน);
-  const laovilla2 = await page.$(laovilla2ตัวล่าง);
+  const laovilladate = await page.$(laovilladatess);
+  const laovilla1 = await page.$(laovilla3upper);
+  const laovilla2 = await page.$(laovilla2under);
 
   //หวยลาวนคร
-  const laocitydate = await page.$(laocityวันที่);
-  const laocity1 = await page.$(laocity3ตัวบน);
-  const laocity2 = await page.$(laocity2ตัวล่าง);
+  const laocitydate = await page.$(laocitydatess);
+  const laocity1 = await page.$(laocity3upper);
+  const laocity2 = await page.$(laocity2under);
 
   //หวยลาวดีเดย์
-  const laotonightdate = await page.$(laotonightวันที่);
-  const laotonight1 = await page.$(laotonight3ตัวบน);
-  const laotonight2 = await page.$(laotonight2ตัวล่าง);
+  const laotonightdate = await page.$(laotonightdatess);
+  const laotonight1 = await page.$(laotonight3upper);
+  const laotonight2 = await page.$(laotonight2under);
 
   //หวยลาวเศรษฐกิจ
-  const laoeconomicdate = await page.$(laoeconomicวันที่);
-  const laoeconomic1 = await page.$(laoeconomic3ตัวบน);
-  const laoeconomic2 = await page.$(laoeconomic2ตัวล่าง);
+  const laoeconomicdate = await page.$(laoeconomicdatess);
+  const laoeconomic1 = await page.$(laoeconomic3upper);
+  const laoeconomic2 = await page.$(laoeconomic2under);
 
   //หวยลาวดีเดย์
-  const laoddaydate = await page.$(laoddayวันที่);
-  const laodday1 = await page.$(laodday3ตัวบน);
-  const laodday2 = await page.$(laodday2ตัวล่าง);
+  const laoddaydate = await page.$(laoddaydatess);
+  const laodday1 = await page.$(laodday3upper);
+  const laodday2 = await page.$(laodday2under);
 
   //หวยลาวรุ่งเรื่อง
-  const laogrowdate = await page.$(laogrowวันที่);
-  const laogrow1 = await page.$(laogrow3ตัวบน);
-  const laogrow2 = await page.$(laogrow2ตัวล่าง);
+  const laogrowdate = await page.$(laogrowdatess);
+  const laogrow1 = await page.$(laogrow3upper);
+  const laogrow2 = await page.$(laogrow2under);
 
   //หวยลาวพลัส
-  const laoplusdate = await page.$(laoplusวันที่);
-  const laoplus1 = await page.$(laoplus3ตัวบน);
-  const laoplus2 = await page.$(laoplus2ตัวล่าง);
+  const laoplusdate = await page.$(laoplusdatess);
+  const laoplus1 = await page.$(laoplus3upper);
+  const laoplus2 = await page.$(laoplus2under);
 
   //หวยฮานอย จันทร์ พุธ ศุกร์
-  const hanoidate = await page.$(hanoiวันที่);
-  const hanoi1 = await page.$(hanoi3ตัวบน);
-  const hanoi2 = await page.$(hanoi2ตัวล่าง);
+  const hanoidate = await page.$(hanoidatess);
+  const hanoi1 = await page.$(hanoi3upper);
+  const hanoi2 = await page.$(hanoi2under);
 
   //หวยฮานอย vip
-  const hanoivipdate = await page.$(hanoivipวันที่);
-  const hanoivip1 = await page.$(hanoivip3ตัวบน);
-  const hanoivip2 = await page.$(hanoivip2ตัวล่าง);
+  const hanoivipdate = await page.$(hanoivipdatess);
+  const hanoivip1 = await page.$(hanoivip3upper);
+  const hanoivip2 = await page.$(hanoivip2under);
 
   //หวยฮานอยพิเศษ
-  const hanoispdate = await page.$(hanoispวันที่);
-  const hanoisp1 = await page.$(hanoisp3ตัวบน);
-  const hanoisp2 = await page.$(hanoisp2ตัวล่าง);
+  const hanoispdate = await page.$(hanoispdatess);
+  const hanoisp1 = await page.$(hanoisp3upper);
+  const hanoisp2 = await page.$(hanoisp2under);
 
   //หวยฮานอยรอบดึก
-  const hanoimidnightdate = await page.$(hanoimidnightวันที่);
-  const hanoimidnight1 = await page.$(hanoimidnight3ตัวบน);
-  const hanoimidnight2 = await page.$(hanoimidnight2ตัวล่าง);
+  const hanoimidnightdate = await page.$(hanoimidnightdatess);
+  const hanoimidnight1 = await page.$(hanoimidnight3upper);
+  const hanoimidnight2 = await page.$(hanoimidnight2under);
 
   //หวยฮานอยเช้า
-  const hanoimorningdate = await page.$(hanoimorningวันที่);
-  const hanoimorning1 = await page.$(hanoimorning3ตัวบน);
-  const hanoimorning2 = await page.$(hanoimorning2ตัวล่าง);
+  const hanoimorningdate = await page.$(hanoimorningdatess);
+  const hanoimorning1 = await page.$(hanoimorning3upper);
+  const hanoimorning2 = await page.$(hanoimorning2under);
 
   //หวยฮานอยเดย์
-  const hanoidaydate = await page.$(hanoidayวันที่);
-  const hanoiday1 = await page.$(hanoiday3ตัวบน);
-  const hanoiday2 = await page.$(hanoiday2ตัวล่าง);
+  const hanoidaydate = await page.$(hanoidaydatess);
+  const hanoiday1 = await page.$(hanoiday3upper);
+  const hanoiday2 = await page.$(hanoiday2under);
 
   //หวยฮานอยไชโย
-  const hanoichaiyodate = await page.$(hanoichaiyoวันที่);
-  const hanoichaiyo1 = await page.$(hanoichaiyo3ตัวบน);
-  const hanoichaiyo2 = await page.$(hanoichaiyo2ตัวล่าง);
+  const hanoichaiyodate = await page.$(hanoichaiyodatess);
+  const hanoichaiyo1 = await page.$(hanoichaiyo3upper);
+  const hanoichaiyo2 = await page.$(hanoichaiyo2under);
 
   //หวยฮานอยท้องถิ่น
-  const hanoilocaldate = await page.$(hanoilocalวันที่);
-  const hanoilocal1 = await page.$(hanoilocal3ตัวบน);
-  const hanoilocal2 = await page.$(hanoilocal2ตัวล่าง);
+  const hanoilocaldate = await page.$(hanoilocaldatess);
+  const hanoilocal1 = await page.$(hanoilocal3upper);
+  const hanoilocal2 = await page.$(hanoilocal2under);
 
   //หวยออมสิน
-  const aomsindate = await page.$(aomsinวันที่);
-  const aomsin1 = await page.$(aomsin3ตัวบน);
-  const aomsin2 = await page.$(aomsin2ตัวล่าง);
+  const aomsindate = await page.$(aomsindatess);
+  const aomsin1 = await page.$(aomsin3upper);
+  const aomsin2 = await page.$(aomsin2under);
 
   //หวยธกส
-  const baacdate = await page.$(baacวันที่);
-  const baac1 = await page.$(baac3ตัวบน);
-  const baac2 = await page.$(baac2ตัวล่าง);
+  const baacdate = await page.$(baacdatess);
+  const baac1 = await page.$(baac3upper);
+  const baac2 = await page.$(baac2under);
 
   //หวยแคนาดา
-  const canadadate = await page.$(canadaวันที่);
-  const canada1 = await page.$(canada3ตัวบน);
-  const canada2 = await page.$(canada2ตัวล่าง);
+  const canadadate = await page.$(canadadatess);
+  const canada1 = await page.$(canada3upper);
+  const canada2 = await page.$(canada2under);
 
   //หวยหุ้น
   //หุ้นเกาหลี
-  const koreastockdate = await page.$(koreastockวันที่);
-  const koreastock1 = await page.$(koreastock3ตัวบน);
-  const koreastock2 = await page.$(koreastock2ตัวล่าง);
+  const koreastockdate = await page.$(koreastockdatess);
+  const koreastock1 = await page.$(koreastock3upper);
+  const koreastock2 = await page.$(koreastock2under);
 
   //หุ้นนิเคอิเช้า
-  const nikeimorningdate = await page.$(nikeimorningวันที่);
-  const nikeimorning1 = await page.$(nikeimorning3ตัวบน);
-  const nikeimorning2 = await page.$(nikeimorning2ตัวล่าง);
+  const nikeimorningdate = await page.$(nikeimorningdatess);
+  const nikeimorning1 = await page.$(nikeimorning3upper);
+  const nikeimorning2 = await page.$(nikeimorning2under);
 
   //หุ้นนิเคอิบ่าย
-  const nikeimiddaydate = await page.$(nikeimiddayวันที่);
-  const nikeimidday1 = await page.$(nikeimidday3ตัวบน);
-  const nikeimidday2 = await page.$(nikeimidday2ตัวล่าง);
+  const nikeimiddaydate = await page.$(nikeimiddaydatess);
+  const nikeimidday1 = await page.$(nikeimidday3upper);
+  const nikeimidday2 = await page.$(nikeimidday2under);
 
   //หุ้นฮั่งเส็งเช้า
-  const hungsengmorningdate = await page.$(hungsengmorningวันที่);
-  const hungsengmorning1 = await page.$(hungsengmorning3ตัวบน);
-  const hungsengmorning2 = await page.$(hungsengmorning2ตัวล่าง);
+  const hungsengmorningdate = await page.$(hungsengmorningdatess);
+  const hungsengmorning1 = await page.$(hungsengmorning3upper);
+  const hungsengmorning2 = await page.$(hungsengmorning2under);
 
   //หุ้นฮั่งเส็งบ่าย
-  const hungsengmiddaydate = await page.$(hungsengmiddayวันที่);
-  const hungsengmidday1 = await page.$(hungsengmidday3ตัวบน);
-  const hungsengmidday2 = await page.$(hungsengmidday2ตัวล่าง);
+  const hungsengmiddaydate = await page.$(hungsengmiddaydatess);
+  const hungsengmidday1 = await page.$(hungsengmidday3upper);
+  const hungsengmidday2 = await page.$(hungsengmidday2under);
 
   //หุ้นจีนเช้า
-  const chinamorningdate = await page.$(chinamorningวันที่);
-  const chinamorning1 = await page.$(chinamorning3ตัวบน);
-  const chinamorning2 = await page.$(chinamorning2ตัวล่าง);
+  const chinamorningdate = await page.$(chinamorningdatess);
+  const chinamorning1 = await page.$(chinamorning3upper);
+  const chinamorning2 = await page.$(chinamorning2under);
 
   //หุ้นจีนบ่าย
-  const chinamiddaydate = await page.$(chinamiddayวันที่);
-  const chinamidday1 = await page.$(chinamidday3ตัวบน);
-  const chinamidday2 = await page.$(chinamidday2ตัวล่าง);
+  const chinamiddaydate = await page.$(chinamiddaydatess);
+  const chinamidday1 = await page.$(chinamidday3upper);
+  const chinamidday2 = await page.$(chinamidday2under);
 
   //หุ้นเกาหลี
-  const taiwanstockdate = await page.$(taiwanstockวันที่);
-  const taiwanstock1 = await page.$(taiwanstock3ตัวบน);
-  const taiwanstock2 = await page.$(taiwanstock2ตัวล่าง);
+  const taiwanstockdate = await page.$(taiwanstockdatess);
+  const taiwanstock1 = await page.$(taiwanstock3upper);
+  const taiwanstock2 = await page.$(taiwanstock2under);
 
   //หุ้นสิงคโปร์
-  const singaporestockdate = await page.$(singaporestockวันที่);
-  const singaporestock1 = await page.$(singaporestock3ตัวบน);
-  const singaporestock2 = await page.$(singaporestock2ตัวล่าง);
+  const singaporestockdate = await page.$(singaporestockdatess);
+  const singaporestock1 = await page.$(singaporestock3upper);
+  const singaporestock2 = await page.$(singaporestock2under);
 
   //หุ้นอินเดีย
-  const indiastockdate = await page.$(indiastockวันที่);
-  const indiastock1 = await page.$(indiastock3ตัวบน);
-  const indiastock2 = await page.$(indiastock2ตัวล่าง);
+  const indiastockdate = await page.$(indiastockdatess);
+  const indiastock1 = await page.$(indiastock3upper);
+  const indiastock2 = await page.$(indiastock2under);
 
   //หุ้นรัสเซีย
-  const russiastockdate = await page.$(russiastockวันที่);
-  const russiastock1 = await page.$(russiastock3ตัวบน);
-  const russiastock2 = await page.$(russiastock2ตัวล่าง);
+  const russiastockdate = await page.$(russiastockdatess);
+  const russiastock1 = await page.$(russiastock3upper);
+  const russiastock2 = await page.$(russiastock2under);
 
   //หุ้นอียิปต์
-  const egyptstockdate = await page.$(egyptstockวันที่);
-  const egyptstock1 = await page.$(egyptstock3ตัวบน);
-  const egyptstock2 = await page.$(egyptstock2ตัวล่าง);
+  const egyptstockdate = await page.$(egyptstockdatess);
+  const egyptstock1 = await page.$(egyptstock3upper);
+  const egyptstock2 = await page.$(egyptstock2under);
 
   //หุ้นเยอรมัน
-  const germanstockdate = await page.$(germanstockวันที่);
-  const germanstock1 = await page.$(germanstock3ตัวบน);
-  const germanstock2 = await page.$(germanstock2ตัวล่าง);
+  const germanstockdate = await page.$(germanstockdatess);
+  const germanstock1 = await page.$(germanstock3upper);
+  const germanstock2 = await page.$(germanstock2under);
 
   //หุ้นอังกฤษ
-  const englandstockdate = await page.$(englandstockวันที่);
-  const englandstock1 = await page.$(englandstock3ตัวบน);
-  const englandstock2 = await page.$(englandstock2ตัวล่าง);
+  const englandstockdate = await page.$(englandstockdatess);
+  const englandstock1 = await page.$(englandstock3upper);
+  const englandstock2 = await page.$(englandstock2under);
 
   //หุ้นดาวโจนส์
-  const dowjonestockdate = await page.$(dowjonestockวันที่);
-  const dowjonestock1 = await page.$(dowjonestock3ตัวบน);
-  const dowjonestock2 = await page.$(dowjonestock2ตัวล่าง);
+  const dowjonestockdate = await page.$(dowjonestockdatess);
+  const dowjonestock1 = await page.$(dowjonestock3upper);
+  const dowjonestock2 = await page.$(dowjonestock2under);
 
   // Get the inner text of the element
   // หวยรัฐบาล
@@ -945,273 +945,273 @@ app.get("/", async (req, res) => {
   const alldata = [
     {
       หวยรัฐบาล: {
-        วันที่: thdates,
-        รางวัลที่1: thtext1,
-        "2ตัวล่าง": thtext2,
-        "3ตัวหน้า": thtext3,
+        datess: thdates,
+        num1: thtext1,
+        "2under": thtext2,
+        "3front": thtext3,
         "3ตัวล่าง": thtext4,
       },
     },
-    { หวยมาเลย์: { วันที่: mydates, "3ตัวบน": mytext1, "2ตัวล่าง": mytext2 } },
+    { หวยมาเลย์: { datess: mydates, "3upper": mytext1, "2under": mytext2 } },
     {
       หวยลาว3วัน: {
-        วันที่: laodates,
-        "3ตัวบน": laotext1,
-        "2ตัวล่าง": laotext2,
+        datess: laodates,
+        "3upper": laotext1,
+        "2under": laotext2,
       },
     },
     {
       หวยฮานอย: {
-        วันที่: hanoidates,
-        "3ตัวบน": hanoitext1,
-        "2ตัวล่าง": hanoitext2,
+        datess: hanoidates,
+        "3upper": hanoitext1,
+        "2under": hanoitext2,
       },
     },
     {
       หวยออมสิน: {
-        วันที่: aomsindates,
-        "3ตัวบน": aomsintext1,
-        "2ตัวล่าง": aomsintext2,
+        datess: aomsindates,
+        "3upper": aomsintext1,
+        "2under": aomsintext2,
       },
     },
     {
       หวยธกส: {
-        วันที่: baacdates,
-        "3ตัวบน": baactext1,
-        "2ตัวล่าง": baactext2,
+        datess: baacdates,
+        "3upper": baactext1,
+        "2under": baactext2,
       },
     },
     {
       หวยฮานอยvip: {
-        วันที่: hanoivipdates,
-        "3ตัวบน": hanoiviptext1,
-        "2ตัวล่าง": hanoiviptext2,
+        datess: hanoivipdates,
+        "3upper": hanoiviptext1,
+        "2under": hanoiviptext2,
       },
     },
     {
       หวยฮานอยพิเศษ: {
-        วันที่: hanoispdates,
-        "3ตัวบน": hanoisptext1,
-        "2ตัวล่าง": hanoisptext2,
+        datess: hanoispdates,
+        "3upper": hanoisptext1,
+        "2under": hanoisptext2,
       },
     },
     {
       หวยฮานอยรอบดึก: {
-        วันที่: hanoimidnightdates,
-        "3ตัวบน": hanoimidnighttext1,
-        "2ตัวล่าง": hanoimidnighttext2,
+        datess: hanoimidnightdates,
+        "3upper": hanoimidnighttext1,
+        "2under": hanoimidnighttext2,
       },
     },
     {
       หวยฮานอยเช้า: {
-        วันที่: hanoimorningdates,
-        "3ตัวบน": hanoimorningtext1,
-        "2ตัวล่าง": hanoimorningtext2,
+        datess: hanoimorningdates,
+        "3upper": hanoimorningtext1,
+        "2under": hanoimorningtext2,
       },
     },
     {
       หวยลาวเช้า: {
-        วันที่: laomorningdates,
-        "3ตัวบน": laomorningtext1,
-        "2ตัวล่าง": laomorningtext2,
+        datess: laomorningdates,
+        "3upper": laomorningtext1,
+        "2under": laomorningtext2,
       },
     },
     {
       หวยลาวเที่ยง: {
-        วันที่: laomiddaydates,
-        "3ตัวบน": laomiddaytext1,
-        "2ตัวล่าง": laomiddaytext2,
+        datess: laomiddaydates,
+        "3upper": laomiddaytext1,
+        "2under": laomiddaytext2,
       },
     },
     {
       หวยฮานอยเดย์: {
-        วันที่: hanoidaydates,
-        "3ตัวบน": hanoidaytext1,
-        "2ตัวล่าง": hanoidaytext2,
+        datess: hanoidaydates,
+        "3upper": hanoidaytext1,
+        "2under": hanoidaytext2,
       },
     },
     {
       หวยแคนาดา: {
-        วันที่: canadadates,
-        "3ตัวบน": canadatext1,
-        "2ตัวล่าง": canadatext2,
+        datess: canadadates,
+        "3upper": canadatext1,
+        "2under": canadatext2,
       },
     },
     {
       หวยลาวร่วมใจ: {
-        วันที่: laotogetherdates,
-        "3ตัวบน": laotogethertext1,
-        "2ตัวล่าง": laotogethertext2,
+        datess: laotogetherdates,
+        "3upper": laotogethertext1,
+        "2under": laotogethertext2,
       },
     },
     {
       หวยลาววิลล่า: {
-        วันที่: laovilladates,
-        "3ตัวบน": laovillatext1,
-        "2ตัวล่าง": laovillatext2,
+        datess: laovilladates,
+        "3upper": laovillatext1,
+        "2under": laovillatext2,
       },
     },
     {
       หวยลาวนคร: {
-        วันที่: laocitydates,
-        "3ตัวบน": laocitytext1,
-        "2ตัวล่าง": laocitytext2,
+        datess: laocitydates,
+        "3upper": laocitytext1,
+        "2under": laocitytext2,
       },
     },
     {
       หวยลาวทูไนท์: {
-        วันที่: laotonightdates,
-        "3ตัวบน": laotonighttext1,
-        "2ตัวล่าง": laotonighttext2,
+        datess: laotonightdates,
+        "3upper": laotonighttext1,
+        "2under": laotonighttext2,
       },
     },
     {
       หวยลาวเศรษฐกิจ: {
-        วันที่: laoeconomicdates,
-        "3ตัวบน": laoeconomictext1,
-        "2ตัวล่าง": laoeconomictext2,
+        datess: laoeconomicdates,
+        "3upper": laoeconomictext1,
+        "2under": laoeconomictext2,
       },
     },
     {
       หวยลาวดีเดย์: {
-        วันที่: laoddaydates,
-        "3ตัวบน": laoddaytext1,
-        "2ตัวล่าง": laoddaytext2,
+        datess: laoddaydates,
+        "3upper": laoddaytext1,
+        "2under": laoddaytext2,
       },
     },
     {
       หวยฮานอยไชโย: {
-        วันที่: hanoichaiyodates,
-        "3ตัวบน": hanoichaiyotext1,
-        "2ตัวล่าง": hanoichaiyotext2,
+        datess: hanoichaiyodates,
+        "3upper": hanoichaiyotext1,
+        "2under": hanoichaiyotext2,
       },
     },
     {
       หวยฮานอยท้องถิ่น: {
-        วันที่: hanoilocaldates,
-        "3ตัวบน": hanoilocaltext1,
-        "2ตัวล่าง": hanoilocaltext2,
+        datess: hanoilocaldates,
+        "3upper": hanoilocaltext1,
+        "2under": hanoilocaltext2,
       },
     },
     {
       หวยลาวรุ่งเรือง: {
-        วันที่: laogrowdates,
-        "3ตัวบน": laogrowtext1,
-        "2ตัวล่าง": laogrowtext2,
+        datess: laogrowdates,
+        "3upper": laogrowtext1,
+        "2under": laogrowtext2,
       },
     },
     {
       หวยลาวพลัส: {
-        วันที่: laoplusdates,
-        "3ตัวบน": laoplustext1,
-        "2ตัวล่าง": laoplustext2,
+        datess: laoplusdates,
+        "3upper": laoplustext1,
+        "2under": laoplustext2,
       },
     },
     {
       หุ้นเกาหลี: {
-        วันที่: koreastockdates,
-        "3ตัวบน": koreastocktext1,
-        "2ตัวล่าง": koreastocktext2,
+        datess: koreastockdates,
+        "3upper": koreastocktext1,
+        "2under": koreastocktext2,
       },
     },
     {
       หุ้นนิเคอิเช้า: {
-        วันที่: nikeimorningdates,
-        "3ตัวบน": nikeimorningtext1,
-        "2ตัวล่าง": nikeimorningtext2,
+        datess: nikeimorningdates,
+        "3upper": nikeimorningtext1,
+        "2under": nikeimorningtext2,
       },
     },
     {
       หุ้นนิเคอิบ่าย: {
-        วันที่: nikeimiddaydates,
-        "3ตัวบน": nikeimiddaytext1,
-        "2ตัวล่าง": nikeimiddaytext2,
+        datess: nikeimiddaydates,
+        "3upper": nikeimiddaytext1,
+        "2under": nikeimiddaytext2,
       },
     },
     {
       หุ้นฮั่งเส็งเช้า: {
-        วันที่: hungsengmorningdates,
-        "3ตัวบน": hungsengmorningtext1,
-        "2ตัวล่าง": hungsengmorningtext2,
+        datess: hungsengmorningdates,
+        "3upper": hungsengmorningtext1,
+        "2under": hungsengmorningtext2,
       },
     },
     {
       หุ้นฮั่งเส็งบ่าย: {
-        วันที่: hungsengmiddaydates,
-        "3ตัวบน": hungsengmiddaytext1,
-        "2ตัวล่าง": hungsengmiddaytext2,
+        datess: hungsengmiddaydates,
+        "3upper": hungsengmiddaytext1,
+        "2under": hungsengmiddaytext2,
       },
     },
     {
       หุ้นจีนเช้า: {
-        วันที่: chinamorningdates,
-        "3ตัวบน": chinamorningtext1,
-        "2ตัวล่าง": chinamorningtext2,
+        datess: chinamorningdates,
+        "3upper": chinamorningtext1,
+        "2under": chinamorningtext2,
       },
     },
     {
       หุ้นจีนบ่าย: {
-        วันที่: chinamiddaydates,
-        "3ตัวบน": chinamiddaytext1,
-        "2ตัวล่าง": chinamiddaytext2,
+        datess: chinamiddaydates,
+        "3upper": chinamiddaytext1,
+        "2under": chinamiddaytext2,
       },
     },
     {
       หุ้นไต้หวัน: {
-        วันที่: taiwanstockdates,
-        "3ตัวบน": taiwanstocktext1,
-        "2ตัวล่าง": taiwanstocktext2,
+        datess: taiwanstockdates,
+        "3upper": taiwanstocktext1,
+        "2under": taiwanstocktext2,
       },
     },
     {
       หุ้นสิงคโปร์: {
-        วันที่: singaporestockdates,
-        "3ตัวบน": singaporestocktext1,
-        "2ตัวล่าง": singaporestocktext2,
+        datess: singaporestockdates,
+        "3upper": singaporestocktext1,
+        "2under": singaporestocktext2,
       },
     },
     {
       หุ้นอินเดีย: {
-        วันที่: indiastockdates,
-        "3ตัวบน": indiastocktext1,
-        "2ตัวล่าง": indiastocktext2,
+        datess: indiastockdates,
+        "3upper": indiastocktext1,
+        "2under": indiastocktext2,
       },
     },
     {
       หุ้นรัสเซีย: {
-        วันที่: russiastockdates,
-        "3ตัวบน": russiastocktext1,
-        "2ตัวล่าง": russiastocktext2,
+        datess: russiastockdates,
+        "3upper": russiastocktext1,
+        "2under": russiastocktext2,
       },
     },
     {
       หุ้นอียิปต์: {
-        วันที่: egyptstockdates,
-        "3ตัวบน": egyptstocktext1,
-        "2ตัวล่าง": egyptstocktext2,
+        datess: egyptstockdates,
+        "3upper": egyptstocktext1,
+        "2under": egyptstocktext2,
       },
     },
 
     {
       หุ้นเยอรมัน: {
-        วันที่: germanstockdates,
-        "3ตัวบน": germanstocktext1,
-        "2ตัวล่าง": germanstocktext2,
+        datess: germanstockdates,
+        "3upper": germanstocktext1,
+        "2under": germanstocktext2,
       },
     },
 
     {
       หุ้นอังกฤษ: {
-        วันที่: englandstockdates,
-        "3ตัวบน": englandstocktext1,
-        "2ตัวล่าง": englandstocktext2,
+        datess: englandstockdates,
+        "3upper": englandstocktext1,
+        "2under": englandstocktext2,
       },
     },
     {
       หุ้นดาวโจนส์: {
-        วันที่: dowjonestockdates,
-        "3ตัวบน": dowjonestocktext1,
-        "2ตัวล่าง": dowjonestocktext2,
+        datess: dowjonestockdates,
+        "3upper": dowjonestocktext1,
+        "2under": dowjonestocktext2,
       },
     },
   ];
