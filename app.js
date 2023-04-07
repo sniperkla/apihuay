@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.get("/", async (req, res) => {
+app.get("/huay", async (req, res) => {
   const password = req.body;
 
   //หวยรัฐบาล
