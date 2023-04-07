@@ -8,7 +8,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-app.get("/", async (req, res) => {
+app.get("/huay", async (req, res) => {
   const password = req.body;
 
   //หวยรัฐบาล
