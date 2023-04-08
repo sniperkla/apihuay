@@ -544,7 +544,6 @@ app.get("/huay", async (req, res) => {
   const dowjonestock1 = await page.$(dowjonestock3upper);
   const dowjonestock2 = await page.$(dowjonestock2under);
 
-
   // Get the inner text of the element
   // หวยรัฐบาล
   const thdates = await page.evaluate((el) => el.innerText, thdate);
@@ -1227,9 +1226,9 @@ app.get("/huay", async (req, res) => {
     },
   ];
 
-res.status(200).send(alldata);
-await browser.close();
-
+  res.status(200).send(alldata);
+  await browser.close();
 });
-
-app.listen(process.env.PORT || 3000);
+app.listen(3000, () => {
+  console.log("Server listening on port 3000");
+});
