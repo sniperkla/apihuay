@@ -345,10 +345,11 @@ app.get("/huay", async (req, res) => {
   // Open a new page in the browser
   const page = await browser.newPage();
 
-  page.setDefaultNavigationTimeout(0);
-
   // Navigate to the website you want to scrape
-  await page.goto("https://www.mhandee.com/");
+  await page.goto("https://www.mhandee.com/", {
+    waitUntil: "networkidle0",
+    timeout: 15000
+  });
 
   // หวยไทย
   const thdate = await page.$(thdatess);
