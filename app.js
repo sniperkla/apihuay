@@ -335,8 +335,7 @@ app.get("/huay", async (req, res) => {
   // Launch a new headless browser instance
 
   // Edge executable will return an empty string locally.
-  const pathToExtension =
-    "/root/.cache/puppeteer/chrome/linux-1056772/chrome-linux/chrome";
+  const pathToExtension = "/usr/bin/chromium-browser";
   const browser = await puppeteer.launch({
     executablePath: pathToExtension,
     args: ["--disable-infobars", "--no-sandbox", "--disable-setuid-sandbox"],
