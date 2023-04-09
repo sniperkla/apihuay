@@ -343,6 +343,7 @@ app.get("/huay", async (req, res) => {
 
   // Open a new page in the browser
   const page = await browser.newPage();
+  page.setRequestInterception(true);
 
   // Navigate to the website you want to scrape
 
@@ -1247,7 +1248,7 @@ app.get("/huay", async (req, res) => {
       },
     ];
   } catch (error) {
-    res.status(404).json("error please try again later");
+    res.status(404).json("Request limit reached");
     await browser.close();
   } finally {
     res.status(200).send(alldata);
