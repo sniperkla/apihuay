@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 // Importing Puppeteer core as default otherwise
 // it won't function correctly with "launch()"
 const puppeteer = require("puppeteer");
@@ -346,893 +345,914 @@ app.get("/huay", async (req, res) => {
   const page = await browser.newPage();
 
   // Navigate to the website you want to scrape
-  await page.goto("https://www.mhandee.com/", {
-    waitUntil: "networkidle0",
-    timeout: 15000
-  });
-
-  // หวยไทย
-  const thdate = await page.$(thdatess);
-  const th1 = await page.$(thnum1);
-  const th2 = await page.$(th2under);
-  const th3 = await page.$(th3front);
-  const th4 = await page.$(th4under);
-
-  // หวยมาเลย์
-  const mydate = await page.$(mydatess);
-  const my1 = await page.$(my3upper);
-  const my2 = await page.$(my2under);
-
-  //หวยลาว จันทร์ พุธ ศุกร์
-  const laodate = await page.$(laodatess);
-  const lao1 = await page.$(lao3upper);
-  const lao2 = await page.$(lao2under);
-
-  //หวยลาวเช้า
-  const laomorningdate = await page.$(laomorningdatess);
-  const laomorning1 = await page.$(laomorning3upper);
-  const laomorning2 = await page.$(laomorning2under);
-
-  //หวยลาวเที่ยง
-  const laomiddaydate = await page.$(laomiddaydatess);
-  const laomidday1 = await page.$(laomidday3upper);
-  const laomidday2 = await page.$(laomidday2under);
-
-  //หวยลาวร่วมใจ
-  const laotogetherdate = await page.$(laotogetherdatess);
-  const laotogether1 = await page.$(laotogether3upper);
-  const laotogether2 = await page.$(laotogether2under);
-
-  //หวยลาววิลล่า
-  const laovilladate = await page.$(laovilladatess);
-  const laovilla1 = await page.$(laovilla3upper);
-  const laovilla2 = await page.$(laovilla2under);
-
-  //หวยลาวนคร
-  const laocitydate = await page.$(laocitydatess);
-  const laocity1 = await page.$(laocity3upper);
-  const laocity2 = await page.$(laocity2under);
-
-  //หวยลาวดีเดย์
-  const laotonightdate = await page.$(laotonightdatess);
-  const laotonight1 = await page.$(laotonight3upper);
-  const laotonight2 = await page.$(laotonight2under);
-
-  //หวยลาวเศรษฐกิจ
-  const laoeconomicdate = await page.$(laoeconomicdatess);
-  const laoeconomic1 = await page.$(laoeconomic3upper);
-  const laoeconomic2 = await page.$(laoeconomic2under);
-
-  //หวยลาวดีเดย์
-  const laoddaydate = await page.$(laoddaydatess);
-  const laodday1 = await page.$(laodday3upper);
-  const laodday2 = await page.$(laodday2under);
-
-  //หวยลาวรุ่งเรื่อง
-  const laogrowdate = await page.$(laogrowdatess);
-  const laogrow1 = await page.$(laogrow3upper);
-  const laogrow2 = await page.$(laogrow2under);
-
-  //หวยลาวพลัส
-  const laoplusdate = await page.$(laoplusdatess);
-  const laoplus1 = await page.$(laoplus3upper);
-  const laoplus2 = await page.$(laoplus2under);
-
-  //หวยฮานอย จันทร์ พุธ ศุกร์
-  const hanoidate = await page.$(hanoidatess);
-  const hanoi1 = await page.$(hanoi3upper);
-  const hanoi2 = await page.$(hanoi2under);
-
-  //หวยฮานอย vip
-  const hanoivipdate = await page.$(hanoivipdatess);
-  const hanoivip1 = await page.$(hanoivip3upper);
-  const hanoivip2 = await page.$(hanoivip2under);
-
-  //หวยฮานอยพิเศษ
-  const hanoispdate = await page.$(hanoispdatess);
-  const hanoisp1 = await page.$(hanoisp3upper);
-  const hanoisp2 = await page.$(hanoisp2under);
-
-  //หวยฮานอยรอบดึก
-  const hanoimidnightdate = await page.$(hanoimidnightdatess);
-  const hanoimidnight1 = await page.$(hanoimidnight3upper);
-  const hanoimidnight2 = await page.$(hanoimidnight2under);
-
-  //หวยฮานอยเช้า
-  const hanoimorningdate = await page.$(hanoimorningdatess);
-  const hanoimorning1 = await page.$(hanoimorning3upper);
-  const hanoimorning2 = await page.$(hanoimorning2under);
-
-  //หวยฮานอยเดย์
-  const hanoidaydate = await page.$(hanoidaydatess);
-  const hanoiday1 = await page.$(hanoiday3upper);
-  const hanoiday2 = await page.$(hanoiday2under);
-
-  //หวยฮานอยไชโย
-  const hanoichaiyodate = await page.$(hanoichaiyodatess);
-  const hanoichaiyo1 = await page.$(hanoichaiyo3upper);
-  const hanoichaiyo2 = await page.$(hanoichaiyo2under);
-
-  //หวยฮานอยท้องถิ่น
-  const hanoilocaldate = await page.$(hanoilocaldatess);
-  const hanoilocal1 = await page.$(hanoilocal3upper);
-  const hanoilocal2 = await page.$(hanoilocal2under);
-
-  //หวยออมสิน
-  const aomsindate = await page.$(aomsindatess);
-  const aomsin1 = await page.$(aomsin3upper);
-  const aomsin2 = await page.$(aomsin2under);
-
-  //หวยธกส
-  const baacdate = await page.$(baacdatess);
-  const baac1 = await page.$(baac3upper);
-  const baac2 = await page.$(baac2under);
-
-  //หวยแคนาดา
-  const canadadate = await page.$(canadadatess);
-  const canada1 = await page.$(canada3upper);
-  const canada2 = await page.$(canada2under);
-
-  //หวยหุ้น
-  //หุ้นเกาหลี
-  const koreastockdate = await page.$(koreastockdatess);
-  const koreastock1 = await page.$(koreastock3upper);
-  const koreastock2 = await page.$(koreastock2under);
-
-  //หุ้นนิเคอิเช้า
-  const nikeimorningdate = await page.$(nikeimorningdatess);
-  const nikeimorning1 = await page.$(nikeimorning3upper);
-  const nikeimorning2 = await page.$(nikeimorning2under);
-
-  //หุ้นนิเคอิบ่าย
-  const nikeimiddaydate = await page.$(nikeimiddaydatess);
-  const nikeimidday1 = await page.$(nikeimidday3upper);
-  const nikeimidday2 = await page.$(nikeimidday2under);
-
-  //หุ้นฮั่งเส็งเช้า
-  const hungsengmorningdate = await page.$(hungsengmorningdatess);
-  const hungsengmorning1 = await page.$(hungsengmorning3upper);
-  const hungsengmorning2 = await page.$(hungsengmorning2under);
-
-  //หุ้นฮั่งเส็งบ่าย
-  const hungsengmiddaydate = await page.$(hungsengmiddaydatess);
-  const hungsengmidday1 = await page.$(hungsengmidday3upper);
-  const hungsengmidday2 = await page.$(hungsengmidday2under);
-
-  //หุ้นจีนเช้า
-  const chinamorningdate = await page.$(chinamorningdatess);
-  const chinamorning1 = await page.$(chinamorning3upper);
-  const chinamorning2 = await page.$(chinamorning2under);
-
-  //หุ้นจีนบ่าย
-  const chinamiddaydate = await page.$(chinamiddaydatess);
-  const chinamidday1 = await page.$(chinamidday3upper);
-  const chinamidday2 = await page.$(chinamidday2under);
-
-  //หุ้นเกาหลี
-  const taiwanstockdate = await page.$(taiwanstockdatess);
-  const taiwanstock1 = await page.$(taiwanstock3upper);
-  const taiwanstock2 = await page.$(taiwanstock2under);
-
-  //หุ้นสิงคโปร์
-  const singaporestockdate = await page.$(singaporestockdatess);
-  const singaporestock1 = await page.$(singaporestock3upper);
-  const singaporestock2 = await page.$(singaporestock2under);
-
-  //หุ้นอินเดีย
-  const indiastockdate = await page.$(indiastockdatess);
-  const indiastock1 = await page.$(indiastock3upper);
-  const indiastock2 = await page.$(indiastock2under);
-
-  //หุ้นรัสเซีย
-  const russiastockdate = await page.$(russiastockdatess);
-  const russiastock1 = await page.$(russiastock3upper);
-  const russiastock2 = await page.$(russiastock2under);
-
-  //หุ้นอียิปต์
-  const egyptstockdate = await page.$(egyptstockdatess);
-  const egyptstock1 = await page.$(egyptstock3upper);
-  const egyptstock2 = await page.$(egyptstock2under);
-
-  //หุ้นเยอรมัน
-  const germanstockdate = await page.$(germanstockdatess);
-  const germanstock1 = await page.$(germanstock3upper);
-  const germanstock2 = await page.$(germanstock2under);
-
-  //หุ้นอังกฤษ
-  const englandstockdate = await page.$(englandstockdatess);
-  const englandstock1 = await page.$(englandstock3upper);
-  const englandstock2 = await page.$(englandstock2under);
-
-  //หุ้นดาวโจนส์
-  const dowjonestockdate = await page.$(dowjonestockdatess);
-  const dowjonestock1 = await page.$(dowjonestock3upper);
-  const dowjonestock2 = await page.$(dowjonestock2under);
-
-  // Get the inner text of the element
-  // หวยรัฐบาล
-  const thdates = await page.evaluate((el) => el.innerText, thdate);
-  const thtext1 = await page.evaluate((el) => el.innerText, th1);
-  const thtext2 = await page.evaluate((el) => el.innerText, th2);
-  const thtext3 = await page.evaluate((el) => el.innerText, th3);
-  const thtext4 = await page.evaluate((el) => el.innerText, th4);
-  // มาเลย์
-  const mydates = await page.evaluate((el) => el.innerText, mydate);
-  const mytext1 = await page.evaluate((el) => el.innerText, my1);
-  const mytext2 = await page.evaluate((el) => el.innerText, my2);
-
-  //หวยลาว 3 วัน
-  const laodates = await page.evaluate((el) => el.innerText, laodate);
-  const laotext1 = await page.evaluate((el) => el.innerText, lao1);
-  const laotext2 = await page.evaluate((el) => el.innerText, lao2);
-
-  //หวยลาวเช้า
-  const laomorningdates = await page.evaluate(
-    (el) => el.innerText,
-    laomorningdate
-  );
-  const laomorningtext1 = await page.evaluate(
-    (el) => el.innerText,
-    laomorning1
-  );
-  const laomorningtext2 = await page.evaluate(
-    (el) => el.innerText,
-    laomorning2
-  );
-
-  //หวยลาวเที่ยง
-  const laomiddaydates = await page.evaluate(
-    (el) => el.innerText,
-    laomiddaydate
-  );
-  const laomiddaytext1 = await page.evaluate((el) => el.innerText, laomidday1);
-  const laomiddaytext2 = await page.evaluate((el) => el.innerText, laomidday2);
-
-  //หวยลาวร่วมใจ
-  const laotogetherdates = await page.evaluate(
-    (el) => el.innerText,
-    laotogetherdate
-  );
-  const laotogethertext1 = await page.evaluate(
-    (el) => el.innerText,
-    laotogether1
-  );
-  const laotogethertext2 = await page.evaluate(
-    (el) => el.innerText,
-    laotogether2
-  );
-
-  //หวยลาววิลล่า
-  const laovilladates = await page.evaluate((el) => el.innerText, laovilladate);
-  const laovillatext1 = await page.evaluate((el) => el.innerText, laovilla1);
-  const laovillatext2 = await page.evaluate((el) => el.innerText, laovilla2);
-
-  //หวยลาวนคร
-  const laocitydates = await page.evaluate((el) => el.innerText, laocitydate);
-  const laocitytext1 = await page.evaluate((el) => el.innerText, laocity1);
-  const laocitytext2 = await page.evaluate((el) => el.innerText, laocity2);
-
-  //หวยลาวทูไนท์
-  const laotonightdates = await page.evaluate(
-    (el) => el.innerText,
-    laotonightdate
-  );
-  const laotonighttext1 = await page.evaluate(
-    (el) => el.innerText,
-    laotonight1
-  );
-  const laotonighttext2 = await page.evaluate(
-    (el) => el.innerText,
-    laotonight2
-  );
-
-  //หวยลาวเศรษฐกิจ
-  const laoeconomicdates = await page.evaluate(
-    (el) => el.innerText,
-    laoeconomicdate
-  );
-  const laoeconomictext1 = await page.evaluate(
-    (el) => el.innerText,
-    laoeconomic1
-  );
-  const laoeconomictext2 = await page.evaluate(
-    (el) => el.innerText,
-    laoeconomic2
-  );
-
-  //หวยลาวดีเดย์
-  const laoddaydates = await page.evaluate((el) => el.innerText, laoddaydate);
-  const laoddaytext1 = await page.evaluate((el) => el.innerText, laodday1);
-  const laoddaytext2 = await page.evaluate((el) => el.innerText, laodday2);
-
-  //หวยลาวรุ่งเรือง
-  const laogrowdates = await page.evaluate((el) => el.innerText, laogrowdate);
-  const laogrowtext1 = await page.evaluate((el) => el.innerText, laogrow1);
-  const laogrowtext2 = await page.evaluate((el) => el.innerText, laogrow2);
-
-  //หวยลาวพลัส
-  const laoplusdates = await page.evaluate((el) => el.innerText, laoplusdate);
-  const laoplustext1 = await page.evaluate((el) => el.innerText, laoplus1);
-  const laoplustext2 = await page.evaluate((el) => el.innerText, laoplus2);
-
-  //หวยฮานอย
-  const hanoidates = await page.evaluate((el) => el.innerText, hanoidate);
-  const hanoitext1 = await page.evaluate((el) => el.innerText, hanoi1);
-  const hanoitext2 = await page.evaluate((el) => el.innerText, hanoi2);
-
-  //หวยฮานอยvip
-  const hanoivipdates = await page.evaluate((el) => el.innerText, hanoivipdate);
-  const hanoiviptext1 = await page.evaluate((el) => el.innerText, hanoivip1);
-  const hanoiviptext2 = await page.evaluate((el) => el.innerText, hanoivip2);
-
-  //หวยฮานอยพิเศษ
-  const hanoispdates = await page.evaluate((el) => el.innerText, hanoispdate);
-  const hanoisptext1 = await page.evaluate((el) => el.innerText, hanoisp1);
-  const hanoisptext2 = await page.evaluate((el) => el.innerText, hanoisp2);
-
-  //หวยฮานอยรอบดึก
-  const hanoimidnightdates = await page.evaluate(
-    (el) => el.innerText,
-    hanoimidnightdate
-  );
-  const hanoimidnighttext1 = await page.evaluate(
-    (el) => el.innerText,
-    hanoimidnight1
-  );
-  const hanoimidnighttext2 = await page.evaluate(
-    (el) => el.innerText,
-    hanoimidnight2
-  );
-
-  //หวยฮานอยเช้า
-  const hanoimorningdates = await page.evaluate(
-    (el) => el.innerText,
-    hanoimorningdate
-  );
-  const hanoimorningtext1 = await page.evaluate(
-    (el) => el.innerText,
-    hanoimorning1
-  );
-  const hanoimorningtext2 = await page.evaluate(
-    (el) => el.innerText,
-    hanoimorning2
-  );
-
-  //หวยฮานอยเดย์
-  const hanoidaydates = await page.evaluate((el) => el.innerText, hanoidaydate);
-  const hanoidaytext1 = await page.evaluate((el) => el.innerText, hanoiday1);
-  const hanoidaytext2 = await page.evaluate((el) => el.innerText, hanoiday2);
-
-  //หวยฮานอยท้องถิ่น
-  const hanoilocaldates = await page.evaluate(
-    (el) => el.innerText,
-    hanoilocaldate
-  );
-  const hanoilocaltext1 = await page.evaluate(
-    (el) => el.innerText,
-    hanoilocal1
-  );
-  const hanoilocaltext2 = await page.evaluate(
-    (el) => el.innerText,
-    hanoilocal2
-  );
-
-  //หวยฮานอยไชโย
-  const hanoichaiyodates = await page.evaluate(
-    (el) => el.innerText,
-    hanoichaiyodate
-  );
-  const hanoichaiyotext1 = await page.evaluate(
-    (el) => el.innerText,
-    hanoichaiyo1
-  );
-  const hanoichaiyotext2 = await page.evaluate(
-    (el) => el.innerText,
-    hanoichaiyo2
-  );
-
-  //หวยออมสิน
-  const aomsindates = await page.evaluate((el) => el.innerText, aomsindate);
-  const aomsintext1 = await page.evaluate((el) => el.innerText, aomsin1);
-  const aomsintext2 = await page.evaluate((el) => el.innerText, aomsin2);
-
-  //หวยธกส
-  const baacdates = await page.evaluate((el) => el.innerText, baacdate);
-  const baactext1 = await page.evaluate((el) => el.innerText, baac1);
-  const baactext2 = await page.evaluate((el) => el.innerText, baac2);
-
-  //หวยแคนาดา
-  const canadadates = await page.evaluate((el) => el.innerText, canadadate);
-  const canadatext1 = await page.evaluate((el) => el.innerText, canada1);
-  const canadatext2 = await page.evaluate((el) => el.innerText, canada2);
-
-  //หวยหุ้น
-  //หุ้นเกาหลี
-  const koreastockdates = await page.evaluate(
-    (el) => el.innerText,
-    koreastockdate
-  );
-  const koreastocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    koreastock1
-  );
-  const koreastocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    koreastock2
-  );
-
-  //หุ้นนิเคอิเช้า
-  const nikeimorningdates = await page.evaluate(
-    (el) => el.innerText,
-    nikeimorningdate
-  );
-  const nikeimorningtext1 = await page.evaluate(
-    (el) => el.innerText,
-    nikeimorning1
-  );
-  const nikeimorningtext2 = await page.evaluate(
-    (el) => el.innerText,
-    nikeimorning2
-  );
-
-  //หุ้นนิเคอิบ่าย
-  const nikeimiddaydates = await page.evaluate(
-    (el) => el.innerText,
-    nikeimiddaydate
-  );
-  const nikeimiddaytext1 = await page.evaluate(
-    (el) => el.innerText,
-    nikeimidday1
-  );
-  const nikeimiddaytext2 = await page.evaluate(
-    (el) => el.innerText,
-    nikeimidday2
-  );
-
-  //หุ้นฮั่งเส็งเช้า
-  const hungsengmorningdates = await page.evaluate(
-    (el) => el.innerText,
-    hungsengmorningdate
-  );
-  const hungsengmorningtext1 = await page.evaluate(
-    (el) => el.innerText,
-    hungsengmorning1
-  );
-  const hungsengmorningtext2 = await page.evaluate(
-    (el) => el.innerText,
-    hungsengmorning2
-  );
-
-  //หุ้นนิฮั่งเส็งบ่าย
-  const hungsengmiddaydates = await page.evaluate(
-    (el) => el.innerText,
-    hungsengmiddaydate
-  );
-  const hungsengmiddaytext1 = await page.evaluate(
-    (el) => el.innerText,
-    hungsengmidday1
-  );
-  const hungsengmiddaytext2 = await page.evaluate(
-    (el) => el.innerText,
-    hungsengmidday2
-  );
-
-  //หุ้นจีนเช้า
-  const chinamorningdates = await page.evaluate(
-    (el) => el.innerText,
-    chinamorningdate
-  );
-  const chinamorningtext1 = await page.evaluate(
-    (el) => el.innerText,
-    chinamorning1
-  );
-  const chinamorningtext2 = await page.evaluate(
-    (el) => el.innerText,
-    chinamorning2
-  );
-
-  //หุ้นจีนบ่าย
-  const chinamiddaydates = await page.evaluate(
-    (el) => el.innerText,
-    chinamiddaydate
-  );
-  const chinamiddaytext1 = await page.evaluate(
-    (el) => el.innerText,
-    chinamidday1
-  );
-  const chinamiddaytext2 = await page.evaluate(
-    (el) => el.innerText,
-    chinamidday2
-  );
-
-  //หุ้นไต้หวัน
-  const taiwanstockdates = await page.evaluate(
-    (el) => el.innerText,
-    taiwanstockdate
-  );
-  const taiwanstocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    taiwanstock1
-  );
-  const taiwanstocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    taiwanstock2
-  );
-
-  //หุ้นสิงคโปร์
-  const singaporestockdates = await page.evaluate(
-    (el) => el.innerText,
-    singaporestockdate
-  );
-  const singaporestocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    singaporestock1
-  );
-  const singaporestocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    singaporestock2
-  );
-
-  //หุ้นอินเดีย
-  const indiastockdates = await page.evaluate(
-    (el) => el.innerText,
-    indiastockdate
-  );
-  const indiastocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    indiastock1
-  );
-  const indiastocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    indiastock2
-  );
-
-  //หุ้นรัสเซีย
-  const russiastockdates = await page.evaluate(
-    (el) => el.innerText,
-    russiastockdate
-  );
-  const russiastocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    russiastock1
-  );
-  const russiastocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    russiastock2
-  );
-
-  //หุ้นอียิปต์
-  const egyptstockdates = await page.evaluate(
-    (el) => el.innerText,
-    egyptstockdate
-  );
-  const egyptstocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    egyptstock1
-  );
-  const egyptstocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    egyptstock2
-  );
-
-  //หุ้นเยอรมัน
-  const germanstockdates = await page.evaluate(
-    (el) => el.innerText,
-    germanstockdate
-  );
-  const germanstocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    germanstock1
-  );
-  const germanstocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    germanstock2
-  );
-
-  //หุ้นอังกฤษ
-  const englandstockdates = await page.evaluate(
-    (el) => el.innerText,
-    englandstockdate
-  );
-  const englandstocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    englandstock1
-  );
-  const englandstocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    englandstock2
-  );
-
-  //หุ้นดาวโจนส์
-  const dowjonestockdates = await page.evaluate(
-    (el) => el.innerText,
-    dowjonestockdate
-  );
-  const dowjonestocktext1 = await page.evaluate(
-    (el) => el.innerText,
-    dowjonestock1
-  );
-  const dowjonestocktext2 = await page.evaluate(
-    (el) => el.innerText,
-    dowjonestock2
-  );
-
-  const alldata = [
-    {
-      หวยรัฐบาล: {
-        วันที่: thdates,
-        รางวัลที่1: thtext1,
-        ตัวล่าง2: thtext2,
-        ตัวหน้า3: thtext3,
-        ตัวล่าง3: thtext4,
+
+  try {
+    await page.goto("https://www.mhandee.com/", {
+      waitUntil: "networkidle0",
+      timeout: 20000,
+    });
+
+    // หวยไทย
+    const thdate = await page.$(thdatess);
+    const th1 = await page.$(thnum1);
+    const th2 = await page.$(th2under);
+    const th3 = await page.$(th3front);
+    const th4 = await page.$(th4under);
+
+    // หวยมาเลย์
+    const mydate = await page.$(mydatess);
+    const my1 = await page.$(my3upper);
+    const my2 = await page.$(my2under);
+
+    //หวยลาว จันทร์ พุธ ศุกร์
+    const laodate = await page.$(laodatess);
+    const lao1 = await page.$(lao3upper);
+    const lao2 = await page.$(lao2under);
+
+    //หวยลาวเช้า
+    const laomorningdate = await page.$(laomorningdatess);
+    const laomorning1 = await page.$(laomorning3upper);
+    const laomorning2 = await page.$(laomorning2under);
+
+    //หวยลาวเที่ยง
+    const laomiddaydate = await page.$(laomiddaydatess);
+    const laomidday1 = await page.$(laomidday3upper);
+    const laomidday2 = await page.$(laomidday2under);
+
+    //หวยลาวร่วมใจ
+    const laotogetherdate = await page.$(laotogetherdatess);
+    const laotogether1 = await page.$(laotogether3upper);
+    const laotogether2 = await page.$(laotogether2under);
+
+    //หวยลาววิลล่า
+    const laovilladate = await page.$(laovilladatess);
+    const laovilla1 = await page.$(laovilla3upper);
+    const laovilla2 = await page.$(laovilla2under);
+
+    //หวยลาวนคร
+    const laocitydate = await page.$(laocitydatess);
+    const laocity1 = await page.$(laocity3upper);
+    const laocity2 = await page.$(laocity2under);
+
+    //หวยลาวดีเดย์
+    const laotonightdate = await page.$(laotonightdatess);
+    const laotonight1 = await page.$(laotonight3upper);
+    const laotonight2 = await page.$(laotonight2under);
+
+    //หวยลาวเศรษฐกิจ
+    const laoeconomicdate = await page.$(laoeconomicdatess);
+    const laoeconomic1 = await page.$(laoeconomic3upper);
+    const laoeconomic2 = await page.$(laoeconomic2under);
+
+    //หวยลาวดีเดย์
+    const laoddaydate = await page.$(laoddaydatess);
+    const laodday1 = await page.$(laodday3upper);
+    const laodday2 = await page.$(laodday2under);
+
+    //หวยลาวรุ่งเรื่อง
+    const laogrowdate = await page.$(laogrowdatess);
+    const laogrow1 = await page.$(laogrow3upper);
+    const laogrow2 = await page.$(laogrow2under);
+
+    //หวยลาวพลัส
+    const laoplusdate = await page.$(laoplusdatess);
+    const laoplus1 = await page.$(laoplus3upper);
+    const laoplus2 = await page.$(laoplus2under);
+
+    //หวยฮานอย จันทร์ พุธ ศุกร์
+    const hanoidate = await page.$(hanoidatess);
+    const hanoi1 = await page.$(hanoi3upper);
+    const hanoi2 = await page.$(hanoi2under);
+
+    //หวยฮานอย vip
+    const hanoivipdate = await page.$(hanoivipdatess);
+    const hanoivip1 = await page.$(hanoivip3upper);
+    const hanoivip2 = await page.$(hanoivip2under);
+
+    //หวยฮานอยพิเศษ
+    const hanoispdate = await page.$(hanoispdatess);
+    const hanoisp1 = await page.$(hanoisp3upper);
+    const hanoisp2 = await page.$(hanoisp2under);
+
+    //หวยฮานอยรอบดึก
+    const hanoimidnightdate = await page.$(hanoimidnightdatess);
+    const hanoimidnight1 = await page.$(hanoimidnight3upper);
+    const hanoimidnight2 = await page.$(hanoimidnight2under);
+
+    //หวยฮานอยเช้า
+    const hanoimorningdate = await page.$(hanoimorningdatess);
+    const hanoimorning1 = await page.$(hanoimorning3upper);
+    const hanoimorning2 = await page.$(hanoimorning2under);
+
+    //หวยฮานอยเดย์
+    const hanoidaydate = await page.$(hanoidaydatess);
+    const hanoiday1 = await page.$(hanoiday3upper);
+    const hanoiday2 = await page.$(hanoiday2under);
+
+    //หวยฮานอยไชโย
+    const hanoichaiyodate = await page.$(hanoichaiyodatess);
+    const hanoichaiyo1 = await page.$(hanoichaiyo3upper);
+    const hanoichaiyo2 = await page.$(hanoichaiyo2under);
+
+    //หวยฮานอยท้องถิ่น
+    const hanoilocaldate = await page.$(hanoilocaldatess);
+    const hanoilocal1 = await page.$(hanoilocal3upper);
+    const hanoilocal2 = await page.$(hanoilocal2under);
+
+    //หวยออมสิน
+    const aomsindate = await page.$(aomsindatess);
+    const aomsin1 = await page.$(aomsin3upper);
+    const aomsin2 = await page.$(aomsin2under);
+
+    //หวยธกส
+    const baacdate = await page.$(baacdatess);
+    const baac1 = await page.$(baac3upper);
+    const baac2 = await page.$(baac2under);
+
+    //หวยแคนาดา
+    const canadadate = await page.$(canadadatess);
+    const canada1 = await page.$(canada3upper);
+    const canada2 = await page.$(canada2under);
+
+    //หวยหุ้น
+    //หุ้นเกาหลี
+    const koreastockdate = await page.$(koreastockdatess);
+    const koreastock1 = await page.$(koreastock3upper);
+    const koreastock2 = await page.$(koreastock2under);
+
+    //หุ้นนิเคอิเช้า
+    const nikeimorningdate = await page.$(nikeimorningdatess);
+    const nikeimorning1 = await page.$(nikeimorning3upper);
+    const nikeimorning2 = await page.$(nikeimorning2under);
+
+    //หุ้นนิเคอิบ่าย
+    const nikeimiddaydate = await page.$(nikeimiddaydatess);
+    const nikeimidday1 = await page.$(nikeimidday3upper);
+    const nikeimidday2 = await page.$(nikeimidday2under);
+
+    //หุ้นฮั่งเส็งเช้า
+    const hungsengmorningdate = await page.$(hungsengmorningdatess);
+    const hungsengmorning1 = await page.$(hungsengmorning3upper);
+    const hungsengmorning2 = await page.$(hungsengmorning2under);
+
+    //หุ้นฮั่งเส็งบ่าย
+    const hungsengmiddaydate = await page.$(hungsengmiddaydatess);
+    const hungsengmidday1 = await page.$(hungsengmidday3upper);
+    const hungsengmidday2 = await page.$(hungsengmidday2under);
+
+    //หุ้นจีนเช้า
+    const chinamorningdate = await page.$(chinamorningdatess);
+    const chinamorning1 = await page.$(chinamorning3upper);
+    const chinamorning2 = await page.$(chinamorning2under);
+
+    //หุ้นจีนบ่าย
+    const chinamiddaydate = await page.$(chinamiddaydatess);
+    const chinamidday1 = await page.$(chinamidday3upper);
+    const chinamidday2 = await page.$(chinamidday2under);
+
+    //หุ้นเกาหลี
+    const taiwanstockdate = await page.$(taiwanstockdatess);
+    const taiwanstock1 = await page.$(taiwanstock3upper);
+    const taiwanstock2 = await page.$(taiwanstock2under);
+
+    //หุ้นสิงคโปร์
+    const singaporestockdate = await page.$(singaporestockdatess);
+    const singaporestock1 = await page.$(singaporestock3upper);
+    const singaporestock2 = await page.$(singaporestock2under);
+
+    //หุ้นอินเดีย
+    const indiastockdate = await page.$(indiastockdatess);
+    const indiastock1 = await page.$(indiastock3upper);
+    const indiastock2 = await page.$(indiastock2under);
+
+    //หุ้นรัสเซีย
+    const russiastockdate = await page.$(russiastockdatess);
+    const russiastock1 = await page.$(russiastock3upper);
+    const russiastock2 = await page.$(russiastock2under);
+
+    //หุ้นอียิปต์
+    const egyptstockdate = await page.$(egyptstockdatess);
+    const egyptstock1 = await page.$(egyptstock3upper);
+    const egyptstock2 = await page.$(egyptstock2under);
+
+    //หุ้นเยอรมัน
+    const germanstockdate = await page.$(germanstockdatess);
+    const germanstock1 = await page.$(germanstock3upper);
+    const germanstock2 = await page.$(germanstock2under);
+
+    //หุ้นอังกฤษ
+    const englandstockdate = await page.$(englandstockdatess);
+    const englandstock1 = await page.$(englandstock3upper);
+    const englandstock2 = await page.$(englandstock2under);
+
+    //หุ้นดาวโจนส์
+    const dowjonestockdate = await page.$(dowjonestockdatess);
+    const dowjonestock1 = await page.$(dowjonestock3upper);
+    const dowjonestock2 = await page.$(dowjonestock2under);
+
+    // Get the inner text of the element
+    // หวยรัฐบาล
+    const thdates = await page.evaluate((el) => el.innerText, thdate);
+    const thtext1 = await page.evaluate((el) => el.innerText, th1);
+    const thtext2 = await page.evaluate((el) => el.innerText, th2);
+    const thtext3 = await page.evaluate((el) => el.innerText, th3);
+    const thtext4 = await page.evaluate((el) => el.innerText, th4);
+    // มาเลย์
+    const mydates = await page.evaluate((el) => el.innerText, mydate);
+    const mytext1 = await page.evaluate((el) => el.innerText, my1);
+    const mytext2 = await page.evaluate((el) => el.innerText, my2);
+
+    //หวยลาว 3 วัน
+    const laodates = await page.evaluate((el) => el.innerText, laodate);
+    const laotext1 = await page.evaluate((el) => el.innerText, lao1);
+    const laotext2 = await page.evaluate((el) => el.innerText, lao2);
+
+    //หวยลาวเช้า
+    const laomorningdates = await page.evaluate(
+      (el) => el.innerText,
+      laomorningdate
+    );
+    const laomorningtext1 = await page.evaluate(
+      (el) => el.innerText,
+      laomorning1
+    );
+    const laomorningtext2 = await page.evaluate(
+      (el) => el.innerText,
+      laomorning2
+    );
+
+    //หวยลาวเที่ยง
+    const laomiddaydates = await page.evaluate(
+      (el) => el.innerText,
+      laomiddaydate
+    );
+    const laomiddaytext1 = await page.evaluate(
+      (el) => el.innerText,
+      laomidday1
+    );
+    const laomiddaytext2 = await page.evaluate(
+      (el) => el.innerText,
+      laomidday2
+    );
+
+    //หวยลาวร่วมใจ
+    const laotogetherdates = await page.evaluate(
+      (el) => el.innerText,
+      laotogetherdate
+    );
+    const laotogethertext1 = await page.evaluate(
+      (el) => el.innerText,
+      laotogether1
+    );
+    const laotogethertext2 = await page.evaluate(
+      (el) => el.innerText,
+      laotogether2
+    );
+
+    //หวยลาววิลล่า
+    const laovilladates = await page.evaluate(
+      (el) => el.innerText,
+      laovilladate
+    );
+    const laovillatext1 = await page.evaluate((el) => el.innerText, laovilla1);
+    const laovillatext2 = await page.evaluate((el) => el.innerText, laovilla2);
+
+    //หวยลาวนคร
+    const laocitydates = await page.evaluate((el) => el.innerText, laocitydate);
+    const laocitytext1 = await page.evaluate((el) => el.innerText, laocity1);
+    const laocitytext2 = await page.evaluate((el) => el.innerText, laocity2);
+
+    //หวยลาวทูไนท์
+    const laotonightdates = await page.evaluate(
+      (el) => el.innerText,
+      laotonightdate
+    );
+    const laotonighttext1 = await page.evaluate(
+      (el) => el.innerText,
+      laotonight1
+    );
+    const laotonighttext2 = await page.evaluate(
+      (el) => el.innerText,
+      laotonight2
+    );
+
+    //หวยลาวเศรษฐกิจ
+    const laoeconomicdates = await page.evaluate(
+      (el) => el.innerText,
+      laoeconomicdate
+    );
+    const laoeconomictext1 = await page.evaluate(
+      (el) => el.innerText,
+      laoeconomic1
+    );
+    const laoeconomictext2 = await page.evaluate(
+      (el) => el.innerText,
+      laoeconomic2
+    );
+
+    //หวยลาวดีเดย์
+    const laoddaydates = await page.evaluate((el) => el.innerText, laoddaydate);
+    const laoddaytext1 = await page.evaluate((el) => el.innerText, laodday1);
+    const laoddaytext2 = await page.evaluate((el) => el.innerText, laodday2);
+
+    //หวยลาวรุ่งเรือง
+    const laogrowdates = await page.evaluate((el) => el.innerText, laogrowdate);
+    const laogrowtext1 = await page.evaluate((el) => el.innerText, laogrow1);
+    const laogrowtext2 = await page.evaluate((el) => el.innerText, laogrow2);
+
+    //หวยลาวพลัส
+    const laoplusdates = await page.evaluate((el) => el.innerText, laoplusdate);
+    const laoplustext1 = await page.evaluate((el) => el.innerText, laoplus1);
+    const laoplustext2 = await page.evaluate((el) => el.innerText, laoplus2);
+
+    //หวยฮานอย
+    const hanoidates = await page.evaluate((el) => el.innerText, hanoidate);
+    const hanoitext1 = await page.evaluate((el) => el.innerText, hanoi1);
+    const hanoitext2 = await page.evaluate((el) => el.innerText, hanoi2);
+
+    //หวยฮานอยvip
+    const hanoivipdates = await page.evaluate(
+      (el) => el.innerText,
+      hanoivipdate
+    );
+    const hanoiviptext1 = await page.evaluate((el) => el.innerText, hanoivip1);
+    const hanoiviptext2 = await page.evaluate((el) => el.innerText, hanoivip2);
+
+    //หวยฮานอยพิเศษ
+    const hanoispdates = await page.evaluate((el) => el.innerText, hanoispdate);
+    const hanoisptext1 = await page.evaluate((el) => el.innerText, hanoisp1);
+    const hanoisptext2 = await page.evaluate((el) => el.innerText, hanoisp2);
+
+    //หวยฮานอยรอบดึก
+    const hanoimidnightdates = await page.evaluate(
+      (el) => el.innerText,
+      hanoimidnightdate
+    );
+    const hanoimidnighttext1 = await page.evaluate(
+      (el) => el.innerText,
+      hanoimidnight1
+    );
+    const hanoimidnighttext2 = await page.evaluate(
+      (el) => el.innerText,
+      hanoimidnight2
+    );
+
+    //หวยฮานอยเช้า
+    const hanoimorningdates = await page.evaluate(
+      (el) => el.innerText,
+      hanoimorningdate
+    );
+    const hanoimorningtext1 = await page.evaluate(
+      (el) => el.innerText,
+      hanoimorning1
+    );
+    const hanoimorningtext2 = await page.evaluate(
+      (el) => el.innerText,
+      hanoimorning2
+    );
+
+    //หวยฮานอยเดย์
+    const hanoidaydates = await page.evaluate(
+      (el) => el.innerText,
+      hanoidaydate
+    );
+    const hanoidaytext1 = await page.evaluate((el) => el.innerText, hanoiday1);
+    const hanoidaytext2 = await page.evaluate((el) => el.innerText, hanoiday2);
+
+    //หวยฮานอยท้องถิ่น
+    const hanoilocaldates = await page.evaluate(
+      (el) => el.innerText,
+      hanoilocaldate
+    );
+    const hanoilocaltext1 = await page.evaluate(
+      (el) => el.innerText,
+      hanoilocal1
+    );
+    const hanoilocaltext2 = await page.evaluate(
+      (el) => el.innerText,
+      hanoilocal2
+    );
+
+    //หวยฮานอยไชโย
+    const hanoichaiyodates = await page.evaluate(
+      (el) => el.innerText,
+      hanoichaiyodate
+    );
+    const hanoichaiyotext1 = await page.evaluate(
+      (el) => el.innerText,
+      hanoichaiyo1
+    );
+    const hanoichaiyotext2 = await page.evaluate(
+      (el) => el.innerText,
+      hanoichaiyo2
+    );
+
+    //หวยออมสิน
+    const aomsindates = await page.evaluate((el) => el.innerText, aomsindate);
+    const aomsintext1 = await page.evaluate((el) => el.innerText, aomsin1);
+    const aomsintext2 = await page.evaluate((el) => el.innerText, aomsin2);
+
+    //หวยธกส
+    const baacdates = await page.evaluate((el) => el.innerText, baacdate);
+    const baactext1 = await page.evaluate((el) => el.innerText, baac1);
+    const baactext2 = await page.evaluate((el) => el.innerText, baac2);
+
+    //หวยแคนาดา
+    const canadadates = await page.evaluate((el) => el.innerText, canadadate);
+    const canadatext1 = await page.evaluate((el) => el.innerText, canada1);
+    const canadatext2 = await page.evaluate((el) => el.innerText, canada2);
+
+    //หวยหุ้น
+    //หุ้นเกาหลี
+    const koreastockdates = await page.evaluate(
+      (el) => el.innerText,
+      koreastockdate
+    );
+    const koreastocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      koreastock1
+    );
+    const koreastocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      koreastock2
+    );
+
+    //หุ้นนิเคอิเช้า
+    const nikeimorningdates = await page.evaluate(
+      (el) => el.innerText,
+      nikeimorningdate
+    );
+    const nikeimorningtext1 = await page.evaluate(
+      (el) => el.innerText,
+      nikeimorning1
+    );
+    const nikeimorningtext2 = await page.evaluate(
+      (el) => el.innerText,
+      nikeimorning2
+    );
+
+    //หุ้นนิเคอิบ่าย
+    const nikeimiddaydates = await page.evaluate(
+      (el) => el.innerText,
+      nikeimiddaydate
+    );
+    const nikeimiddaytext1 = await page.evaluate(
+      (el) => el.innerText,
+      nikeimidday1
+    );
+    const nikeimiddaytext2 = await page.evaluate(
+      (el) => el.innerText,
+      nikeimidday2
+    );
+
+    //หุ้นฮั่งเส็งเช้า
+    const hungsengmorningdates = await page.evaluate(
+      (el) => el.innerText,
+      hungsengmorningdate
+    );
+    const hungsengmorningtext1 = await page.evaluate(
+      (el) => el.innerText,
+      hungsengmorning1
+    );
+    const hungsengmorningtext2 = await page.evaluate(
+      (el) => el.innerText,
+      hungsengmorning2
+    );
+
+    //หุ้นนิฮั่งเส็งบ่าย
+    const hungsengmiddaydates = await page.evaluate(
+      (el) => el.innerText,
+      hungsengmiddaydate
+    );
+    const hungsengmiddaytext1 = await page.evaluate(
+      (el) => el.innerText,
+      hungsengmidday1
+    );
+    const hungsengmiddaytext2 = await page.evaluate(
+      (el) => el.innerText,
+      hungsengmidday2
+    );
+
+    //หุ้นจีนเช้า
+    const chinamorningdates = await page.evaluate(
+      (el) => el.innerText,
+      chinamorningdate
+    );
+    const chinamorningtext1 = await page.evaluate(
+      (el) => el.innerText,
+      chinamorning1
+    );
+    const chinamorningtext2 = await page.evaluate(
+      (el) => el.innerText,
+      chinamorning2
+    );
+
+    //หุ้นจีนบ่าย
+    const chinamiddaydates = await page.evaluate(
+      (el) => el.innerText,
+      chinamiddaydate
+    );
+    const chinamiddaytext1 = await page.evaluate(
+      (el) => el.innerText,
+      chinamidday1
+    );
+    const chinamiddaytext2 = await page.evaluate(
+      (el) => el.innerText,
+      chinamidday2
+    );
+
+    //หุ้นไต้หวัน
+    const taiwanstockdates = await page.evaluate(
+      (el) => el.innerText,
+      taiwanstockdate
+    );
+    const taiwanstocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      taiwanstock1
+    );
+    const taiwanstocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      taiwanstock2
+    );
+
+    //หุ้นสิงคโปร์
+    const singaporestockdates = await page.evaluate(
+      (el) => el.innerText,
+      singaporestockdate
+    );
+    const singaporestocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      singaporestock1
+    );
+    const singaporestocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      singaporestock2
+    );
+
+    //หุ้นอินเดีย
+    const indiastockdates = await page.evaluate(
+      (el) => el.innerText,
+      indiastockdate
+    );
+    const indiastocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      indiastock1
+    );
+    const indiastocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      indiastock2
+    );
+
+    //หุ้นรัสเซีย
+    const russiastockdates = await page.evaluate(
+      (el) => el.innerText,
+      russiastockdate
+    );
+    const russiastocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      russiastock1
+    );
+    const russiastocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      russiastock2
+    );
+
+    //หุ้นอียิปต์
+    const egyptstockdates = await page.evaluate(
+      (el) => el.innerText,
+      egyptstockdate
+    );
+    const egyptstocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      egyptstock1
+    );
+    const egyptstocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      egyptstock2
+    );
+
+    //หุ้นเยอรมัน
+    const germanstockdates = await page.evaluate(
+      (el) => el.innerText,
+      germanstockdate
+    );
+    const germanstocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      germanstock1
+    );
+    const germanstocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      germanstock2
+    );
+
+    //หุ้นอังกฤษ
+    const englandstockdates = await page.evaluate(
+      (el) => el.innerText,
+      englandstockdate
+    );
+    const englandstocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      englandstock1
+    );
+    const englandstocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      englandstock2
+    );
+
+    //หุ้นดาวโจนส์
+    const dowjonestockdates = await page.evaluate(
+      (el) => el.innerText,
+      dowjonestockdate
+    );
+    const dowjonestocktext1 = await page.evaluate(
+      (el) => el.innerText,
+      dowjonestock1
+    );
+    const dowjonestocktext2 = await page.evaluate(
+      (el) => el.innerText,
+      dowjonestock2
+    );
+
+    var alldata = [
+      {
+        หวยรัฐบาล: {
+          วันที่: thdates,
+          รางวัลที่1: thtext1,
+          ตัวล่าง2: thtext2,
+          ตัวหน้า3: thtext3,
+          ตัวล่าง3: thtext4,
+        },
       },
-    },
-    { หวยมาเลย์: { วันที่: mydates, ตัวบน3: mytext1, ตัวล่าง2: mytext2 } },
-    {
-      หวยลาว3วัน: {
-        วันที่: laodates,
-        ตัวบน3: laotext1,
-        ตัวล่าง2: laotext2,
+      { หวยมาเลย์: { วันที่: mydates, ตัวบน3: mytext1, ตัวล่าง2: mytext2 } },
+      {
+        หวยลาว3วัน: {
+          วันที่: laodates,
+          ตัวบน3: laotext1,
+          ตัวล่าง2: laotext2,
+        },
       },
-    },
-    {
-      หวยฮานอย: {
-        วันที่: hanoidates,
-        ตัวบน3: hanoitext1,
-        ตัวล่าง2: hanoitext2,
+      {
+        หวยฮานอย: {
+          วันที่: hanoidates,
+          ตัวบน3: hanoitext1,
+          ตัวล่าง2: hanoitext2,
+        },
       },
-    },
-    {
-      หวยออมสิน: {
-        วันที่: aomsindates,
-        ตัวบน3: aomsintext1,
-        ตัวล่าง2: aomsintext2,
+      {
+        หวยออมสิน: {
+          วันที่: aomsindates,
+          ตัวบน3: aomsintext1,
+          ตัวล่าง2: aomsintext2,
+        },
       },
-    },
-    {
-      หวยธกส: {
-        วันที่: baacdates,
-        ตัวบน3: baactext1,
-        ตัวล่าง2: baactext2,
+      {
+        หวยธกส: {
+          วันที่: baacdates,
+          ตัวบน3: baactext1,
+          ตัวล่าง2: baactext2,
+        },
       },
-    },
-    {
-      หวยฮานอยvip: {
-        วันที่: hanoivipdates,
-        ตัวบน3: hanoiviptext1,
-        ตัวล่าง2: hanoiviptext2,
+      {
+        หวยฮานอยvip: {
+          วันที่: hanoivipdates,
+          ตัวบน3: hanoiviptext1,
+          ตัวล่าง2: hanoiviptext2,
+        },
       },
-    },
-    {
-      หวยฮานอยพิเศษ: {
-        วันที่: hanoispdates,
-        ตัวบน3: hanoisptext1,
-        ตัวล่าง2: hanoisptext2,
+      {
+        หวยฮานอยพิเศษ: {
+          วันที่: hanoispdates,
+          ตัวบน3: hanoisptext1,
+          ตัวล่าง2: hanoisptext2,
+        },
       },
-    },
-    {
-      หวยฮานอยรอบดึก: {
-        วันที่: hanoimidnightdates,
-        ตัวบน3: hanoimidnighttext1,
-        ตัวล่าง2: hanoimidnighttext2,
+      {
+        หวยฮานอยรอบดึก: {
+          วันที่: hanoimidnightdates,
+          ตัวบน3: hanoimidnighttext1,
+          ตัวล่าง2: hanoimidnighttext2,
+        },
       },
-    },
-    {
-      หวยฮานอยเช้า: {
-        วันที่: hanoimorningdates,
-        ตัวบน3: hanoimorningtext1,
-        ตัวล่าง2: hanoimorningtext2,
+      {
+        หวยฮานอยเช้า: {
+          วันที่: hanoimorningdates,
+          ตัวบน3: hanoimorningtext1,
+          ตัวล่าง2: hanoimorningtext2,
+        },
       },
-    },
-    {
-      หวยลาวเช้า: {
-        วันที่: laomorningdates,
-        ตัวบน3: laomorningtext1,
-        ตัวล่าง2: laomorningtext2,
+      {
+        หวยลาวเช้า: {
+          วันที่: laomorningdates,
+          ตัวบน3: laomorningtext1,
+          ตัวล่าง2: laomorningtext2,
+        },
       },
-    },
-    {
-      หวยลาวเที่ยง: {
-        วันที่: laomiddaydates,
-        ตัวบน3: laomiddaytext1,
-        ตัวล่าง2: laomiddaytext2,
+      {
+        หวยลาวเที่ยง: {
+          วันที่: laomiddaydates,
+          ตัวบน3: laomiddaytext1,
+          ตัวล่าง2: laomiddaytext2,
+        },
       },
-    },
-    {
-      หวยฮานอยเดย์: {
-        วันที่: hanoidaydates,
-        ตัวบน3: hanoidaytext1,
-        ตัวล่าง2: hanoidaytext2,
+      {
+        หวยฮานอยเดย์: {
+          วันที่: hanoidaydates,
+          ตัวบน3: hanoidaytext1,
+          ตัวล่าง2: hanoidaytext2,
+        },
       },
-    },
-    {
-      หวยแคนาดา: {
-        วันที่: canadadates,
-        ตัวบน3: canadatext1,
-        ตัวล่าง2: canadatext2,
+      {
+        หวยแคนาดา: {
+          วันที่: canadadates,
+          ตัวบน3: canadatext1,
+          ตัวล่าง2: canadatext2,
+        },
       },
-    },
-    {
-      หวยลาวร่วมใจ: {
-        วันที่: laotogetherdates,
-        ตัวบน3: laotogethertext1,
-        ตัวล่าง2: laotogethertext2,
+      {
+        หวยลาวร่วมใจ: {
+          วันที่: laotogetherdates,
+          ตัวบน3: laotogethertext1,
+          ตัวล่าง2: laotogethertext2,
+        },
       },
-    },
-    {
-      หวยลาววิลล่า: {
-        วันที่: laovilladates,
-        ตัวบน3: laovillatext1,
-        ตัวล่าง2: laovillatext2,
+      {
+        หวยลาววิลล่า: {
+          วันที่: laovilladates,
+          ตัวบน3: laovillatext1,
+          ตัวล่าง2: laovillatext2,
+        },
       },
-    },
-    {
-      หวยลาวนคร: {
-        วันที่: laocitydates,
-        ตัวบน3: laocitytext1,
-        ตัวล่าง2: laocitytext2,
+      {
+        หวยลาวนคร: {
+          วันที่: laocitydates,
+          ตัวบน3: laocitytext1,
+          ตัวล่าง2: laocitytext2,
+        },
       },
-    },
-    {
-      หวยลาวทูไนท์: {
-        วันที่: laotonightdates,
-        ตัวบน3: laotonighttext1,
-        ตัวล่าง2: laotonighttext2,
+      {
+        หวยลาวทูไนท์: {
+          วันที่: laotonightdates,
+          ตัวบน3: laotonighttext1,
+          ตัวล่าง2: laotonighttext2,
+        },
       },
-    },
-    {
-      หวยลาวเศรษฐกิจ: {
-        วันที่: laoeconomicdates,
-        ตัวบน3: laoeconomictext1,
-        ตัวล่าง2: laoeconomictext2,
+      {
+        หวยลาวเศรษฐกิจ: {
+          วันที่: laoeconomicdates,
+          ตัวบน3: laoeconomictext1,
+          ตัวล่าง2: laoeconomictext2,
+        },
       },
-    },
-    {
-      หวยลาวดีเดย์: {
-        วันที่: laoddaydates,
-        ตัวบน3: laoddaytext1,
-        ตัวล่าง2: laoddaytext2,
+      {
+        หวยลาวดีเดย์: {
+          วันที่: laoddaydates,
+          ตัวบน3: laoddaytext1,
+          ตัวล่าง2: laoddaytext2,
+        },
       },
-    },
-    {
-      หวยฮานอยไชโย: {
-        วันที่: hanoichaiyodates,
-        ตัวบน3: hanoichaiyotext1,
-        ตัวล่าง2: hanoichaiyotext2,
+      {
+        หวยฮานอยไชโย: {
+          วันที่: hanoichaiyodates,
+          ตัวบน3: hanoichaiyotext1,
+          ตัวล่าง2: hanoichaiyotext2,
+        },
       },
-    },
-    {
-      หวยฮานอยท้องถิ่น: {
-        วันที่: hanoilocaldates,
-        ตัวบน3: hanoilocaltext1,
-        ตัวล่าง2: hanoilocaltext2,
+      {
+        หวยฮานอยท้องถิ่น: {
+          วันที่: hanoilocaldates,
+          ตัวบน3: hanoilocaltext1,
+          ตัวล่าง2: hanoilocaltext2,
+        },
       },
-    },
-    {
-      หวยลาวรุ่งเรือง: {
-        วันที่: laogrowdates,
-        ตัวบน3: laogrowtext1,
-        ตัวล่าง2: laogrowtext2,
+      {
+        หวยลาวรุ่งเรือง: {
+          วันที่: laogrowdates,
+          ตัวบน3: laogrowtext1,
+          ตัวล่าง2: laogrowtext2,
+        },
       },
-    },
-    {
-      หวยลาวพลัส: {
-        วันที่: laoplusdates,
-        ตัวบน3: laoplustext1,
-        ตัวล่าง2: laoplustext2,
+      {
+        หวยลาวพลัส: {
+          วันที่: laoplusdates,
+          ตัวบน3: laoplustext1,
+          ตัวล่าง2: laoplustext2,
+        },
       },
-    },
-    {
-      หุ้นเกาหลี: {
-        วันที่: koreastockdates,
-        ตัวบน3: koreastocktext1,
-        ตัวล่าง2: koreastocktext2,
+      {
+        หุ้นเกาหลี: {
+          วันที่: koreastockdates,
+          ตัวบน3: koreastocktext1,
+          ตัวล่าง2: koreastocktext2,
+        },
       },
-    },
-    {
-      หุ้นนิเคอิเช้า: {
-        วันที่: nikeimorningdates,
-        ตัวบน3: nikeimorningtext1,
-        ตัวล่าง2: nikeimorningtext2,
+      {
+        หุ้นนิเคอิเช้า: {
+          วันที่: nikeimorningdates,
+          ตัวบน3: nikeimorningtext1,
+          ตัวล่าง2: nikeimorningtext2,
+        },
       },
-    },
-    {
-      หุ้นนิเคอิบ่าย: {
-        วันที่: nikeimiddaydates,
-        ตัวบน3: nikeimiddaytext1,
-        ตัวล่าง2: nikeimiddaytext2,
+      {
+        หุ้นนิเคอิบ่าย: {
+          วันที่: nikeimiddaydates,
+          ตัวบน3: nikeimiddaytext1,
+          ตัวล่าง2: nikeimiddaytext2,
+        },
       },
-    },
-    {
-      หุ้นฮั่งเส็งเช้า: {
-        วันที่: hungsengmorningdates,
-        ตัวบน3: hungsengmorningtext1,
-        ตัวล่าง2: hungsengmorningtext2,
+      {
+        หุ้นฮั่งเส็งเช้า: {
+          วันที่: hungsengmorningdates,
+          ตัวบน3: hungsengmorningtext1,
+          ตัวล่าง2: hungsengmorningtext2,
+        },
       },
-    },
-    {
-      หุ้นฮั่งเส็งบ่าย: {
-        วันที่: hungsengmiddaydates,
-        ตัวบน3: hungsengmiddaytext1,
-        ตัวล่าง2: hungsengmiddaytext2,
+      {
+        หุ้นฮั่งเส็งบ่าย: {
+          วันที่: hungsengmiddaydates,
+          ตัวบน3: hungsengmiddaytext1,
+          ตัวล่าง2: hungsengmiddaytext2,
+        },
       },
-    },
-    {
-      หุ้นจีนเช้า: {
-        วันที่: chinamorningdates,
-        ตัวบน3: chinamorningtext1,
-        ตัวล่าง2: chinamorningtext2,
+      {
+        หุ้นจีนเช้า: {
+          วันที่: chinamorningdates,
+          ตัวบน3: chinamorningtext1,
+          ตัวล่าง2: chinamorningtext2,
+        },
       },
-    },
-    {
-      หุ้นจีนบ่าย: {
-        วันที่: chinamiddaydates,
-        ตัวบน3: chinamiddaytext1,
-        ตัวล่าง2: chinamiddaytext2,
+      {
+        หุ้นจีนบ่าย: {
+          วันที่: chinamiddaydates,
+          ตัวบน3: chinamiddaytext1,
+          ตัวล่าง2: chinamiddaytext2,
+        },
       },
-    },
-    {
-      หุ้นไต้หวัน: {
-        วันที่: taiwanstockdates,
-        ตัวบน3: taiwanstocktext1,
-        ตัวล่าง2: taiwanstocktext2,
+      {
+        หุ้นไต้หวัน: {
+          วันที่: taiwanstockdates,
+          ตัวบน3: taiwanstocktext1,
+          ตัวล่าง2: taiwanstocktext2,
+        },
       },
-    },
-    {
-      หุ้นสิงคโปร์: {
-        วันที่: singaporestockdates,
-        ตัวบน3: singaporestocktext1,
-        ตัวล่าง2: singaporestocktext2,
+      {
+        หุ้นสิงคโปร์: {
+          วันที่: singaporestockdates,
+          ตัวบน3: singaporestocktext1,
+          ตัวล่าง2: singaporestocktext2,
+        },
       },
-    },
-    {
-      หุ้นอินเดีย: {
-        วันที่: indiastockdates,
-        ตัวบน3: indiastocktext1,
-        ตัวล่าง2: indiastocktext2,
+      {
+        หุ้นอินเดีย: {
+          วันที่: indiastockdates,
+          ตัวบน3: indiastocktext1,
+          ตัวล่าง2: indiastocktext2,
+        },
       },
-    },
-    {
-      หุ้นรัสเซีย: {
-        วันที่: russiastockdates,
-        ตัวบน3: russiastocktext1,
-        ตัวล่าง2: russiastocktext2,
+      {
+        หุ้นรัสเซีย: {
+          วันที่: russiastockdates,
+          ตัวบน3: russiastocktext1,
+          ตัวล่าง2: russiastocktext2,
+        },
       },
-    },
-    {
-      หุ้นอียิปต์: {
-        วันที่: egyptstockdates,
-        ตัวบน3: egyptstocktext1,
-        ตัวล่าง2: egyptstocktext2,
+      {
+        หุ้นอียิปต์: {
+          วันที่: egyptstockdates,
+          ตัวบน3: egyptstocktext1,
+          ตัวล่าง2: egyptstocktext2,
+        },
       },
-    },
 
-    {
-      หุ้นเยอรมัน: {
-        วันที่: germanstockdates,
-        ตัวบน3: germanstocktext1,
-        ตัวล่าง2: germanstocktext2,
+      {
+        หุ้นเยอรมัน: {
+          วันที่: germanstockdates,
+          ตัวบน3: germanstocktext1,
+          ตัวล่าง2: germanstocktext2,
+        },
       },
-    },
 
-    {
-      หุ้นอังกฤษ: {
-        วันที่: englandstockdates,
-        ตัวบน3: englandstocktext1,
-        ตัวล่าง2: englandstocktext2,
+      {
+        หุ้นอังกฤษ: {
+          วันที่: englandstockdates,
+          ตัวบน3: englandstocktext1,
+          ตัวล่าง2: englandstocktext2,
+        },
       },
-    },
-    {
-      หุ้นดาวโจนส์: {
-        วันที่: dowjonestockdates,
-        ตัวบน3: dowjonestocktext1,
-        ตัวล่าง2: dowjonestocktext2,
+      {
+        หุ้นดาวโจนส์: {
+          วันที่: dowjonestockdates,
+          ตัวบน3: dowjonestocktext1,
+          ตัวล่าง2: dowjonestocktext2,
+        },
       },
-    },
-  ];
-
-  res.status(200).send(alldata);
-  await browser.close();
+    ];
+  } catch (error) {
+    res.status(404).json("error please try again later");
+    await browser.close();
+  } finally {
+    res.status(200).send(alldata);
+    await browser.close(); // Close the browser instance
+  }
 });
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
