@@ -337,6 +337,7 @@ app.get("/huay", async (req, res) => {
   // Edge executable will return an empty string locally.
 
   const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disabled-setupid-sandbox"],
     headless: false,
   });
 
