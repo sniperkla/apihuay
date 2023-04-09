@@ -339,11 +339,13 @@ app.get("/huay", async (req, res) => {
   const browser = await puppeteer.launch({
     executablePath: pathToExtension,
     args: ["--disable-infobars", "--no-sandbox", "--disable-setuid-sandbox"],
-    headless: true,
+    headless: false,
   });
 
   // Open a new page in the browser
   const page = await browser.newPage();
+
+  page.setDefaultNavigationTimeout(0);
 
   // Navigate to the website you want to scrape
   await page.goto("https://www.mhandee.com/");
