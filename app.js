@@ -339,7 +339,7 @@ app.get("/huay", async (req, res) => {
   const browser = await puppeteer.launch({
     executablePath: pathToExtension,
     args: ["--disable-infobars", "--no-sandbox", "--disable-setuid-sandbox"],
-    headless: false,
+    headless: true,
   });
 
   // Open a new page in the browser
