@@ -1,16 +1,28 @@
 const express = require("express");
 const app = express();
+//const { MongoClient } = require("mongodb");
+
 // Importing Puppeteer core as default otherwise
 // it won't function correctly with "launch()"
 const puppeteer = require("puppeteer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
+// const mongoose = require("mongoose");
+// const Schema = require("./schema");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+// mongoose
+//   .connect("mongodb://147.50.227.164:27017/data", { useNewUrlParser: true })
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch((err) => console.error("Could not connect to MongoDB", err));
+
 app.get("/huay", async (req, res) => {
+  // const client = new MongoClient("mongodb://147.50.227.164:27017/data", {
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true,
+  // });
   const password = req.body;
 
   //หวยรัฐบาล
@@ -336,7 +348,7 @@ app.get("/huay", async (req, res) => {
   // Edge executable will return an empty string locally.
   const pathToExtension = "/usr/bin/chromium-browser";
   const browser = await puppeteer.launch({
-    executablePath: pathToExtension,
+    // executablePath: pathToExtension,
     args: ["--disable-infobars", "--no-sandbox", "--disable-setuid-sandbox"],
     headless: true,
   });
@@ -976,285 +988,268 @@ app.get("/huay", async (req, res) => {
 
     var alldata = [
       {
-        หวยรัฐบาล: {
-          วันที่: thdates,
-          รางวัลที่1: thtext1,
-          ตัวล่าง2: thtext2,
-          ตัวหน้า3: thtext3,
-          ตัวล่าง3: thtext4,
-        },
+        name: "หวยรัฐบาล",
+        date: thdates,
+        first: thtext1,
+        below2: thtext2,
+        front3: thtext3,
+        below3: thtext4,
       },
-      { หวยมาเลย์: { วันที่: mydates, ตัวบน3: mytext1, ตัวล่าง2: mytext2 } },
+      { name: "หวยมาเลย์", date: mydates, upper3: mytext1, below2: mytext2 },
       {
-        หวยลาว3วัน: {
-          วันที่: laodates,
-          ตัวบน3: laotext1,
-          ตัวล่าง2: laotext2,
-        },
+        name: "หวยลาว3วัน",
+        date: laodates,
+        upper3: laotext1,
+        below2: laotext2,
       },
       {
-        หวยฮานอย: {
-          วันที่: hanoidates,
-          ตัวบน3: hanoitext1,
-          ตัวล่าง2: hanoitext2,
-        },
+        name: "หวยฮานอย",
+        date: hanoidates,
+        upper3: hanoitext1,
+        below2: hanoitext2,
       },
       {
-        หวยออมสิน: {
-          วันที่: aomsindates,
-          ตัวบน3: aomsintext1,
-          ตัวล่าง2: aomsintext2,
-        },
+        name: "หวยออมสิน",
+        date: aomsindates,
+        upper3: aomsintext1,
+        below2: aomsintext2,
       },
       {
-        หวยธกส: {
-          วันที่: baacdates,
-          ตัวบน3: baactext1,
-          ตัวล่าง2: baactext2,
-        },
+        name: "หวยธกส",
+        date: baacdates,
+        upper3: baactext1,
+        below2: baactext2,
       },
       {
-        หวยฮานอยvip: {
-          วันที่: hanoivipdates,
-          ตัวบน3: hanoiviptext1,
-          ตัวล่าง2: hanoiviptext2,
-        },
+        name: "หวยฮานอยvip",
+        date: hanoivipdates,
+        upper3: hanoiviptext1,
+        below2: hanoiviptext2,
       },
       {
-        หวยฮานอยพิเศษ: {
-          วันที่: hanoispdates,
-          ตัวบน3: hanoisptext1,
-          ตัวล่าง2: hanoisptext2,
-        },
+        name: "หวยฮานอยพิเศษ",
+        date: hanoispdates,
+        upper3: hanoisptext1,
+        below2: hanoisptext2,
       },
       {
-        หวยฮานอยรอบดึก: {
-          วันที่: hanoimidnightdates,
-          ตัวบน3: hanoimidnighttext1,
-          ตัวล่าง2: hanoimidnighttext2,
-        },
+        name: "หวยฮานอยรอบดึก",
+        date: hanoimidnightdates,
+        upper3: hanoimidnighttext1,
+        below2: hanoimidnighttext2,
       },
       {
-        หวยฮานอยเช้า: {
-          วันที่: hanoimorningdates,
-          ตัวบน3: hanoimorningtext1,
-          ตัวล่าง2: hanoimorningtext2,
-        },
+        name: "หวยฮานอยเช้า",
+        date: hanoimorningdates,
+        upper3: hanoimorningtext1,
+        below2: hanoimorningtext2,
       },
       {
-        หวยลาวเช้า: {
-          วันที่: laomorningdates,
-          ตัวบน3: laomorningtext1,
-          ตัวล่าง2: laomorningtext2,
-        },
+        name: "หวยลาวเช้า",
+        date: laomorningdates,
+        upper3: laomorningtext1,
+        below2: laomorningtext2,
       },
       {
-        หวยลาวเที่ยง: {
-          วันที่: laomiddaydates,
-          ตัวบน3: laomiddaytext1,
-          ตัวล่าง2: laomiddaytext2,
-        },
+        name: "หวยลาวเที่ยง",
+        date: laomiddaydates,
+        upper3: laomiddaytext1,
+        below2: laomiddaytext2,
       },
       {
-        หวยฮานอยเดย์: {
-          วันที่: hanoidaydates,
-          ตัวบน3: hanoidaytext1,
-          ตัวล่าง2: hanoidaytext2,
-        },
+        name: "หวยฮานอยเดย์",
+        date: hanoidaydates,
+        upper3: hanoidaytext1,
+        below2: hanoidaytext2,
       },
       {
-        หวยแคนาดา: {
-          วันที่: canadadates,
-          ตัวบน3: canadatext1,
-          ตัวล่าง2: canadatext2,
-        },
+        name: "หวยแคนาดา",
+        date: canadadates,
+        upper3: canadatext1,
+        below2: canadatext2,
       },
       {
-        หวยลาวร่วมใจ: {
-          วันที่: laotogetherdates,
-          ตัวบน3: laotogethertext1,
-          ตัวล่าง2: laotogethertext2,
-        },
+        name: "หวยลาวร่วมใจ",
+        date: laotogetherdates,
+        upper3: laotogethertext1,
+        below2: laotogethertext2,
       },
       {
-        หวยลาววิลล่า: {
-          วันที่: laovilladates,
-          ตัวบน3: laovillatext1,
-          ตัวล่าง2: laovillatext2,
-        },
+        name: "หวยลาววิลล่า",
+        date: laovilladates,
+        upper3: laovillatext1,
+        below2: laovillatext2,
       },
       {
-        หวยลาวนคร: {
-          วันที่: laocitydates,
-          ตัวบน3: laocitytext1,
-          ตัวล่าง2: laocitytext2,
-        },
+        name: "หวยลาวนคร",
+        date: laocitydates,
+        upper3: laocitytext1,
+        below2: laocitytext2,
       },
       {
-        หวยลาวทูไนท์: {
-          วันที่: laotonightdates,
-          ตัวบน3: laotonighttext1,
-          ตัวล่าง2: laotonighttext2,
-        },
-      },
-      {
-        หวยลาวเศรษฐกิจ: {
-          วันที่: laoeconomicdates,
-          ตัวบน3: laoeconomictext1,
-          ตัวล่าง2: laoeconomictext2,
-        },
-      },
-      {
-        หวยลาวดีเดย์: {
-          วันที่: laoddaydates,
-          ตัวบน3: laoddaytext1,
-          ตัวล่าง2: laoddaytext2,
-        },
-      },
-      {
-        หวยฮานอยไชโย: {
-          วันที่: hanoichaiyodates,
-          ตัวบน3: hanoichaiyotext1,
-          ตัวล่าง2: hanoichaiyotext2,
-        },
-      },
-      {
-        หวยฮานอยท้องถิ่น: {
-          วันที่: hanoilocaldates,
-          ตัวบน3: hanoilocaltext1,
-          ตัวล่าง2: hanoilocaltext2,
-        },
-      },
-      {
-        หวยลาวรุ่งเรือง: {
-          วันที่: laogrowdates,
-          ตัวบน3: laogrowtext1,
-          ตัวล่าง2: laogrowtext2,
-        },
-      },
-      {
-        หวยลาวพลัส: {
-          วันที่: laoplusdates,
-          ตัวบน3: laoplustext1,
-          ตัวล่าง2: laoplustext2,
-        },
-      },
-      {
-        หุ้นเกาหลี: {
-          วันที่: koreastockdates,
-          ตัวบน3: koreastocktext1,
-          ตัวล่าง2: koreastocktext2,
-        },
-      },
-      {
-        หุ้นนิเคอิเช้า: {
-          วันที่: nikeimorningdates,
-          ตัวบน3: nikeimorningtext1,
-          ตัวล่าง2: nikeimorningtext2,
-        },
-      },
-      {
-        หุ้นนิเคอิบ่าย: {
-          วันที่: nikeimiddaydates,
-          ตัวบน3: nikeimiddaytext1,
-          ตัวล่าง2: nikeimiddaytext2,
-        },
-      },
-      {
-        หุ้นฮั่งเส็งเช้า: {
-          วันที่: hungsengmorningdates,
-          ตัวบน3: hungsengmorningtext1,
-          ตัวล่าง2: hungsengmorningtext2,
-        },
-      },
-      {
-        หุ้นฮั่งเส็งบ่าย: {
-          วันที่: hungsengmiddaydates,
-          ตัวบน3: hungsengmiddaytext1,
-          ตัวล่าง2: hungsengmiddaytext2,
-        },
-      },
-      {
-        หุ้นจีนเช้า: {
-          วันที่: chinamorningdates,
-          ตัวบน3: chinamorningtext1,
-          ตัวล่าง2: chinamorningtext2,
-        },
-      },
-      {
-        หุ้นจีนบ่าย: {
-          วันที่: chinamiddaydates,
-          ตัวบน3: chinamiddaytext1,
-          ตัวล่าง2: chinamiddaytext2,
-        },
-      },
-      {
-        หุ้นไต้หวัน: {
-          วันที่: taiwanstockdates,
-          ตัวบน3: taiwanstocktext1,
-          ตัวล่าง2: taiwanstocktext2,
-        },
-      },
-      {
-        หุ้นสิงคโปร์: {
-          วันที่: singaporestockdates,
-          ตัวบน3: singaporestocktext1,
-          ตัวล่าง2: singaporestocktext2,
-        },
-      },
-      {
-        หุ้นอินเดีย: {
-          วันที่: indiastockdates,
-          ตัวบน3: indiastocktext1,
-          ตัวล่าง2: indiastocktext2,
-        },
-      },
-      {
-        หุ้นรัสเซีย: {
-          วันที่: russiastockdates,
-          ตัวบน3: russiastocktext1,
-          ตัวล่าง2: russiastocktext2,
-        },
-      },
-      {
-        หุ้นอียิปต์: {
-          วันที่: egyptstockdates,
-          ตัวบน3: egyptstocktext1,
-          ตัวล่าง2: egyptstocktext2,
-        },
+        name: "หวยลาวทูไนท์",
+        date: laotonightdates,
+        upper3: laotonighttext1,
+        below2: laotonighttext2,
       },
 
       {
-        หุ้นเยอรมัน: {
-          วันที่: germanstockdates,
-          ตัวบน3: germanstocktext1,
-          ตัวล่าง2: germanstocktext2,
-        },
+        name: "หวยลาวเศรษฐกิจ",
+        date: laoeconomicdates,
+        upper3: laoeconomictext1,
+        below2: laoeconomictext2,
+      },
+      {
+        name: "หวยลาวดีเดย์",
+        date: laoddaydates,
+        upper3: laoddaytext1,
+        below2: laoddaytext2,
+      },
+      {
+        name: "หวยฮานอยไชโย",
+        date: hanoichaiyodates,
+        upper3: hanoichaiyotext1,
+        below2: hanoichaiyotext2,
+      },
+      {
+        name: "หวยฮานอยท้องถิ่น",
+        date: hanoilocaldates,
+        upper3: hanoilocaltext1,
+        below2: hanoilocaltext2,
+      },
+      {
+        name: "หวยลาวรุ่งเรือง",
+        date: laogrowdates,
+        upper3: laogrowtext1,
+        below2: laogrowtext2,
+      },
+      {
+        name: "หวยลาวพลัส",
+        date: laoplusdates,
+        upper3: laoplustext1,
+        below2: laoplustext2,
+      },
+      {
+        name: "หุ้นเกาหลี",
+        date: koreastockdates,
+        upper3: koreastocktext1,
+        below2: koreastocktext2,
+      },
+      {
+        name: "หุ้นนิเคอิเช้า",
+        date: nikeimorningdates,
+        upper3: nikeimorningtext1,
+        below2: nikeimorningtext2,
+      },
+      {
+        name: "หุ้นนิเคอิบ่าย",
+        date: nikeimiddaydates,
+        upper3: nikeimiddaytext1,
+        below2: nikeimiddaytext2,
+      },
+      {
+        name: "หุ้นฮั่งเส็งเช้า",
+        date: hungsengmorningdates,
+        upper3: hungsengmorningtext1,
+        below2: hungsengmorningtext2,
+      },
+      {
+        name: "หุ้นฮั่งเส็งบ่าย",
+        date: hungsengmiddaydates,
+        upper3: hungsengmiddaytext1,
+        below2: hungsengmiddaytext2,
+      },
+      {
+        name: "หุ้นจีนเช้า",
+        date: chinamorningdates,
+        upper3: chinamorningtext1,
+        below2: chinamorningtext2,
+      },
+      {
+        name: "หุ้นจีนบ่าย",
+        date: chinamiddaydates,
+        upper3: chinamiddaytext1,
+        below2: chinamiddaytext2,
+      },
+      {
+        name: "หุ้นไต้หวัน",
+        date: taiwanstockdates,
+        upper3: taiwanstocktext1,
+        below2: taiwanstocktext2,
+      },
+      {
+        name: "หุ้นสิงคโปร์",
+        date: singaporestockdates,
+        upper3: singaporestocktext1,
+        below2: singaporestocktext2,
+      },
+      {
+        name: "หุ้นอินเดีย",
+        date: indiastockdates,
+        upper3: indiastocktext1,
+        below2: indiastocktext2,
+      },
+      {
+        name: "หุ้นรัสเซีย",
+        date: russiastockdates,
+        upper3: russiastocktext1,
+        below2: russiastocktext2,
+      },
+      {
+        name: "หุ้นอียิปต์",
+        date: egyptstockdates,
+        upper3: egyptstocktext1,
+        below2: egyptstocktext2,
       },
 
       {
-        หุ้นอังกฤษ: {
-          วันที่: englandstockdates,
-          ตัวบน3: englandstocktext1,
-          ตัวล่าง2: englandstocktext2,
-        },
+        name: "หุ้นเยอรมัน",
+        date: germanstockdates,
+        upper3: germanstocktext1,
+        below2: germanstocktext2,
+      },
+
+      {
+        name: "หุ้นอังกฤษ",
+        date: englandstockdates,
+        upper3: englandstocktext1,
+        below2: englandstocktext2,
       },
       {
-        หุ้นดาวโจนส์: {
-          วันที่: dowjonestockdates,
-          ตัวบน3: dowjonestocktext1,
-          ตัวล่าง2: dowjonestocktext2,
-        },
+        name: "หุ้นดาวโจนส์",
+        date: dowjonestockdates,
+        upper3: dowjonestocktext1,
+        below2: dowjonestocktext2,
       },
     ];
   } catch (error) {
     res.status(404).json("request limit reached");
     await browser.close();
   } finally {
+    // client.connect((err) => {
+    //   if (err) {
+    //     console.error(err);
+    //     return;
+    //   }
+
+    //   // Access the database object
+    //   const db = client.db("data");
+
+    //   // Perform database operations
+    //   db.collection("xxx").insertOne({ name: "sss" }, (err, result) => {
+    //     if (err) {
+    //       console.error(err);
+    //       return;
+    //     }
+    //     console.log(result);
+    //     client.close();
+    //   });
+    // });
+
     res.status(200).send(alldata);
     await browser.close(); // Close the browser instance
   }
 });
-app.listen(3000, () => {
+app.listen(4000, () => {
   console.log("Server listening on port 3000");
 });

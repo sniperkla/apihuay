@@ -26,7 +26,7 @@
  
  
 "body-parser": "^1.20.2",
-  
+ 
  
 "cors": "^2.8.5",
  
@@ -34,9 +34,16 @@
 "express": "^4.18.2",
  
  
+"mongodb": "^5.2.0",
+ 
+ 
+"mongoose": "^7.0.3",
+ 
+ 
 "puppeteer": "^19.8.5",
  
  
-"puppeteer-chromium-resolver": "^19.3.2" 
+"puppeteer-chromium-resolver": "^19.3.2"
+ 
 }
 }
