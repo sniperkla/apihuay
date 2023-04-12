@@ -349,7 +349,7 @@ app.get("/huay", async (req, res) => {
   // Edge executable will return an empty string locally.
   const pathToExtension = "/usr/bin/chromium-browser";
   const browser = await puppeteer.launch({
-    // executablePath: pathToExtension,
+    executablePath: pathToExtension,
     args: ["--disable-infobars", "--no-sandbox", "--disable-setuid-sandbox"],
     headless: true,
   });
@@ -1227,15 +1227,18 @@ app.get("/huay", async (req, res) => {
     res.status(404).json("request limit reached");
     await browser.close();
   } finally {
-    Schema.deleteMany()
-      .then((result) => {
-        Schema.insertMany(alldata);
-        console.log(result);
+    Schema.deleteMany({})
+      .then(() => {
+        console.log("all doc deleted");
+        return Schema.create(alldata);
+      })
+      .then((doc) => {
+        console.log("New added : ", doc);
       })
       .catch((error) => {
         console.error(error);
       });
-  //  res.status(200).send(alldata);
+    //  res.status(200).send(alldata);
     await browser.close(); // Close the browser instance
   }
 });
