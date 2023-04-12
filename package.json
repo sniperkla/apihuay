@@ -40,6 +40,9 @@
 "mongoose": "^7.0.3",
  
  
+"node-cron": "^3.0.0",
+ 
+ 
 "puppeteer": "^19.8.5",
  
  
