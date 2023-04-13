@@ -1,9 +1,6 @@
 const express = require("express");
 const app = express();
-//const { MongoClient } = require("mongodb");
 
-// Importing Puppeteer core as default otherwise
-// it won't function correctly with "launch()"
 const puppeteer = require("puppeteer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -12,7 +9,7 @@ const Schema = require("./schema");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("public"));
+//app.use(express.static("public"));
 
 mongoose
   .connect("mongodb://147.50.227.164:27017/data", { useNewUrlParser: true })
@@ -24,7 +21,7 @@ app.get("/huay", async (req, res) => {
   //   useNewUrlParser: true,
   //   useUnifiedTopology: true,
   // });
-  const password = req.body;
+  //const password = req.body;
 
   //หวยรัฐบาล
   const thdatess =
@@ -362,7 +359,7 @@ app.get("/huay", async (req, res) => {
 
   try {
     await page.goto("https://www.mhandee.com/", {
-      waitUntil: "networkidle0",
+     // waitUntil: "networkidle0",
       timeout: 20000,
     });
 
