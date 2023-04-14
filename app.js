@@ -359,7 +359,7 @@ app.get("/huay", async (req, res) => {
 
   try {
     await page.goto("https://www.mhandee.com/", {
-     // waitUntil: "networkidle0",
+      waitUntil: "networkidle0",
       timeout: 20000,
     });
 
