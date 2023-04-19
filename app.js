@@ -1225,11 +1225,13 @@ app.get("/huay", async (req, res) => {
     await browser.close();
   }
   try {
-    await Schema.deleteMany({});
-    console.log("All documents deleted");
-    const newDocs = await Schema.create(alldata);
-    console.log("New documents added:", newDocs);
-    res.status(200).send(alldata);
+    if (alldata.length > 1) {
+      await Schema.deleteMany({});
+      console.log("All documents deleted");
+      await Schema.create(alldata);
+      console.log("success");
+      res.status(200).send("success");
+    } else res.status(200).send("fail");
     await browser.close(); // Close the browser instance
   } catch (error) {
     console.error(error);
